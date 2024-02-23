@@ -1,0 +1,2 @@
+# akadimos
+A Renting platform
