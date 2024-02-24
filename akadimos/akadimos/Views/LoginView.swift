@@ -20,7 +20,7 @@ struct LoginView: View {
                 VStack(spacing: 0) {
                     Image("Subtract")
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill ()
                         .foregroundStyle(.loginArtwork)
                         .frame(maxWidth: .infinity)
                         .ignoresSafeArea()
@@ -144,6 +144,7 @@ struct LoginView: View {
             .padding(.horizontal, 25)
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

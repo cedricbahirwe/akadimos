@@ -21,6 +21,7 @@ struct WelcomeView: View {
                     .overlay(alignment: .topLeading) {
                         Text("Rent a House\nfor you.")
                             .font(.largeTitle.weight(.black))
+                            .fontDesign(.rounded)
                             .foregroundStyle(.white.shadow(.inner(color: .gray, radius: 2, x: 5)))
                             .padding(.horizontal, 50)
                             .offset(y: -25)

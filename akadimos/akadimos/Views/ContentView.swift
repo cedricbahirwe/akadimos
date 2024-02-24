@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var navPath = NavigationPath([Route.welcome])
+//    @StateObject private var navigationModel = NavigationModel()
+    @SceneStorage("navigation") private var navigationData: Data?
+    @State private var navPath: [Route] = []
+    
     var body: some View {
         NavigationStack(path: $navPath) {
             WelcomeView(navigationPath: $navPath)
+                .task(performInitialNavigationSetup)
+                .navigationDestination(for: Route.self, destination: handleDestinationRoute)
+
         }
-        .navigationDestination(for: Route.self, destination: handleDestinationRoute)
     }
     
     @ViewBuilder
     private func handleDestinationRoute(_ route: Route) -> some View {
         switch route {
-        case .welcome:
-            WelcomeView(navigationPath: $navPath)
         case .login:
             LoginView(navigationPath: $navPath)
         case .home:
@@ -28,14 +31,19 @@ struct ContentView: View {
         }
     }
     
+    @Sendable
+    private func performInitialNavigationSetup() async {
+//        if let navigationData {
+//            navigationModel.jsonData = navigationData
+//        }
+//        
+//
+//        for await _ in navigationModel.objectWillChangeSequence {
+//            navigationData = navigationModel.jsonData
+//        }
+    }
 }
 
 #Preview {
     ContentView()
-}
-
-enum Route {
-    case welcome
-    case login
-    case home
 }

@@ -19,6 +19,7 @@
 		CB40A34B2B8A22A100553BD9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */; };
 		CB40A34D2B8A2A5500553BD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34C2B8A2A5500553BD9 /* LoginView.swift */; };
 		CB40A34F2B8A3D1B00553BD9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */; };
+		CB40A3512B8A3ED500553BD9 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		CB40A34C2B8A2A5500553BD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		CB40A3472B8A21C800553BD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB40A34D2B8A2A5500553BD9 /* LoginView.swift in Sources */,
+				CB40A3512B8A3ED500553BD9 /* NavigationModel.swift in Sources */,
 				CB40A34F2B8A3D1B00553BD9 /* HomeView.swift in Sources */,
 				CB40A34B2B8A22A100553BD9 /* WelcomeView.swift in Sources */,
 				CB40A3212B8A1EF100553BD9 /* Persistence.swift in Sources */,
@@ -477,6 +481,7 @@
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Aka Dimos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -506,6 +511,7 @@
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Aka Dimos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
