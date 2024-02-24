@@ -18,6 +18,7 @@
 		CB40A33A2B8A1EF100553BD9 /* akadimosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3392B8A1EF100553BD9 /* akadimosUITestsLaunchTests.swift */; };
 		CB40A34B2B8A22A100553BD9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */; };
 		CB40A34D2B8A2A5500553BD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34C2B8A2A5500553BD9 /* LoginView.swift */; };
+		CB40A34F2B8A3D1B00553BD9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CB40A3392B8A1EF100553BD9 /* akadimosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = akadimosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		CB40A34C2B8A2A5500553BD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				CB40A3192B8A1EEF00553BD9 /* ContentView.swift */,
 				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
 				CB40A34C2B8A2A5500553BD9 /* LoginView.swift */,
+				CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB40A34D2B8A2A5500553BD9 /* LoginView.swift in Sources */,
+				CB40A34F2B8A3D1B00553BD9 /* HomeView.swift in Sources */,
 				CB40A34B2B8A22A100553BD9 /* WelcomeView.swift in Sources */,
 				CB40A3212B8A1EF100553BD9 /* Persistence.swift in Sources */,
 				CB40A31A2B8A1EEF00553BD9 /* ContentView.swift in Sources */,

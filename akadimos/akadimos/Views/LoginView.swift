@@ -9,6 +9,10 @@ import SwiftUI
 
 struct LoginView: View {
     @Environment(\.colorScheme) private var colorScheme
+    @Binding var navigationPath: [Route]
+
+    @State private var email = ""
+    @State private var password = ""
     
     var body: some View {
         ZStack {
@@ -50,7 +54,7 @@ struct LoginView: View {
                 VStack(spacing: 20) {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Email")
-                        TextField("email@...", text: .constant("email@gmail.com"))
+                        TextField("email@...", text: $email)
                             .padding(.vertical, 5)
                             .overlay(alignment: .bottom) {
                                 Color.foregroundLoginBlue
@@ -63,7 +67,7 @@ struct LoginView: View {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Password")
                         HStack {
-                            SecureField("Password", text: .constant(""))
+                            SecureField("Password", text: $password)
                             Button("Forgot?") {}
                                 .foregroundColor(.foregroundLoginBlue)
                             
@@ -78,7 +82,7 @@ struct LoginView: View {
                     .font(.callout)
                     
                     Button {
-                        
+                        navigationPath.append(.home)
                     } label: {
                         Text("Log In")
                             .fontWeight(.semibold)
@@ -144,6 +148,6 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(navigationPath: .constant([]))
         .preferredColorScheme(.dark)
 }
