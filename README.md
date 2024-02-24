@@ -1,2 +1,2 @@
-# akadimos
+# Akadimos
 A Renting platform
