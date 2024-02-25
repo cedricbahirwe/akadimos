@@ -30,7 +30,9 @@ struct GettingStartedView: View {
             Spacer()
             
             VStack(spacing: 15) {
-                Button(action: {}) {
+                Button(action: {
+                    navigationPath.append(.authentication)
+                }) {
                     Text("Are you a user?")
                         .fontWeight(.heavy)
                         .padding()

@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  HomeScreen.swift
 //  akadimos
 //
 //  Created by Cédric Bahirwe on 24/02/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeScreen: View {
     @Binding var navigationPath: [Route]
     
     private let rows = [
@@ -161,6 +161,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(navigationPath: .constant([]))
+    HomeScreen(navigationPath: .constant([]))
 //        .preferredColorScheme(.dark)
 }

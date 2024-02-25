@@ -18,8 +18,6 @@ struct ContentView: View {
             GettingStartedView(navigationPath: $navPath)
                 .task(performInitialNavigationSetup)
                 .navigationDestination(for: Route.self, destination: handleDestinationRoute)
-            Ta
-
         }
     }
     
@@ -30,8 +28,25 @@ struct ContentView: View {
             AuthenticationView(navigationPath: $navPath)
         case .home:
             MainTabView(selection: $tabSelection) {
-                HomeView(navigationPath: $navPath)
+                activeTabScreen()
+                    .toolbar(.hidden, for: .navigationBar)
             }
+        }
+    }
+    
+    @ViewBuilder
+    func activeTabScreen() -> some View {
+        switch tabSelection {
+        case .home:
+            HomeScreen(navigationPath: $navPath)
+        case .map:
+            MapScreen()
+        case .search:
+            SearchScreen()
+        case .activity:
+            ActivityScreen()
+        case .profile:
+            ProfileScreen()
         }
     }
     

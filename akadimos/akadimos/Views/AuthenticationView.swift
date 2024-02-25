@@ -22,9 +22,10 @@ struct SignupModel {
     var email = ""
     var password = ""
     var confirmPass = ""
+    var agreeToTerms = false
 }
 struct AuthenticationView: View {
-    @State private var authFlow: AuthFlow = .signup
+    @State private var authFlow: AuthFlow = .login
     @Binding var navigationPath: [Route]
     
     @State private var login = LoginModel()
@@ -54,9 +55,12 @@ struct AuthenticationView: View {
                 
                 if !isLogin {
                     HStack(alignment: .top, spacing: 10) {
-                        Image(systemName: "checkmark.square.fill")
+                        Image(systemName: signup.agreeToTerms ? "checkmark.square.fill" : "square")
                             .imageScale(.large)
                             .foregroundStyle(Color.accentColor)
+                            .onTapGesture {
+                                signup.agreeToTerms.toggle()
+                            }
                         
                         Group {
                             Text("By registering, you are agreeing with our ")

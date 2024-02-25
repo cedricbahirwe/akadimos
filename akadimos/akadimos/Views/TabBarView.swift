@@ -50,14 +50,13 @@ struct TabBarView: View {
                     } else {
                         Color.clear
                             .frame(height: 5)
-                            .matchedGeometryEffect(id: "inactive", in: animation)
+                            .matchedGeometryEffect(id: item, in: animation)
                     }
                 }
             }
         }
-        
         .padding(.horizontal)
-        .padding(.vertical, 8)
+        .padding(.top, 8)
     }
 }
 

@@ -13,8 +13,8 @@ struct MainTabView<Content> : View where Content : View {
     var contentView: () -> Content
     var body: some View {
         VStack(spacing: 0) {
-            
             contentView()
+                .frame(maxHeight: .infinity)
             TabBarView(selection: $selection)
         }
     }
@@ -22,6 +22,6 @@ struct MainTabView<Content> : View where Content : View {
 
 #Preview {
     MainTabView(selection: .constant(.home)) {
-        HomeView(navigationPath: .constant([]))
+        HomeScreen(navigationPath: .constant([]))
     }
 }
