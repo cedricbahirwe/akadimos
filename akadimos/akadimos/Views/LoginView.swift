@@ -8,147 +8,134 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Environment(\.colorScheme) private var colorScheme
     @Binding var navigationPath: [Route]
-
-    @State private var email = ""
+    
+    @State private var username = ""
     @State private var password = ""
     
     var body: some View {
-        ZStack {
-            ZStack {
-                VStack(spacing: 0) {
-                    Image("Subtract")
-                        .resizable()
-                        .scaledToFill ()
-                        .foregroundStyle(.loginArtwork)
-                        .frame(maxWidth: .infinity)
-                        .ignoresSafeArea()
-                        .overlay(alignment: .top) {
-                            VStack(alignment: .leading) {
-                                Text("AkaDimos")
-                                    .font(.title2.weight(.bold))
-                                    .kerning(1.5)
-                                Text("Find Your Next Place")
-                                    .font(.caption)
-                                    
-                            }
-                            .foregroundColor(.foregroundLoginBlue)
-                            .padding()
-                        }
-                    
-                    
-                    Color.loginBgWhite
-                        .ignoresSafeArea()
-                }
-            }
+        VStack {
             
-            VStack {
+            Image.loginDoor
+                .resizable()
+                .scaledToFit()
                 
-                Text("Login")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.foregroundLoginBlue)
-                    .padding(.bottom, 40)
-                
-                VStack(spacing: 20) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("Email")
-                        TextField("email@...", text: $email)
-                            .padding(.vertical, 5)
-                            .overlay(alignment: .bottom) {
-                                Color.foregroundLoginBlue
-                                    .frame(height: 1)
-                            }
-                        
+            Text("Login")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundStyle(.foregroundLoginBlue)
+                .padding(.bottom, 40)
+            
+            VStack(spacing: 26) {
+                TextField("driosman", text: $username)
+                    .padding()
+                    .frame(height: 50)
+                    .overlay(alignment: .bottom) {
+                        RoundedRectangle(cornerRadius: 5)
+                            .strokeBorder(Color.init(red: 136/255, green: 126/255, blue: 126/255))
                     }
                     .font(.callout)
-                    
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("Password")
-                        HStack {
-                            SecureField("Password", text: $password)
-                            Button("Forgot?") {}
-                                .foregroundColor(.foregroundLoginBlue)
-                            
-                        }
-                        .padding(.vertical, 5)
-                        .overlay(alignment: .bottom) {
-                            Color.foregroundLoginBlue
-                                .frame(height: 1)
-                        }
-                        
+                
+                SecureField("Password", text: $password)
+                    .padding()
+                    .frame(height: 50)
+                    .overlay(alignment: .bottom) {
+                        RoundedRectangle(cornerRadius: 5)
+                            .strokeBorder(Color(red: 136/255, green: 126/255, blue: 126/255))
                     }
                     .font(.callout)
-                    
-                    Button {
-                        navigationPath.append(.home)
-                    } label: {
-                        Text("Log In")
-                            .fontWeight(.semibold)
-                            .padding(.vertical, 10)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.foregroundLoginBlue, in: .rect(cornerRadius: 5))
-                            .foregroundStyle(.background)
-                    }
-                    
-                }
-                .padding(.bottom, 25)
                 
-                Text("Or continue with")
-                    .foregroundStyle(.secondary)
-                    .font(.callout)
-
-                HStack(spacing: 20) {
-                    Button(action: {}) {
-                        Text("Google")
-                            .padding(.vertical, 10)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.loginBtnBg, in: .rect(cornerRadius: 8))
-                            .overlay(content: {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .strokeBorder(.secondary,
-                                            lineWidth: colorScheme == .dark ? 1 : 0)
-                            })
-                            .foregroundStyle(.foreground.opacity(0.8))
-                    }
+                HStack {
                     
-                    Button(action: {}) {
-                        Label("Apple", systemImage: "apple.logo")
-                            .padding(.vertical, 10)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.loginBtnBg, in: .rect(cornerRadius: 8))
-                            .overlay(content: {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .strokeBorder(.secondary,
-                                            lineWidth: colorScheme == .dark ? 1 : 0)
-                            })
-                            .foregroundStyle(.foreground.opacity(0.8))
-                    }
-                }
-                .padding(.vertical, 10)
-                
-                
-                HStack(spacing: 3) {
-                    Text("Don't have an account?")
-                        .foregroundStyle(.secondary)
-                    Button("Create now") {
+                    Button("Forgot Password ?") {}
+                        .foregroundStyle(.primary)
+                        .opacity(0.6)
+                    
+                    Spacer()
+                    Button("Create Account?") {
                         
                     }
-                    .foregroundStyle(.foregroundLoginBlue)
                 }
-                .font(.callout)
-                .padding(.bottom)
+                .bold()
+                
+                Button {
+                    navigationPath.append(.home)
+                } label: {
+                    Text("Login")
+                        .font(.title2.weight(.bold))
+                        .padding(.vertical, 12)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Color.accentColor,
+                            in: .rect(cornerRadius: 5))
+                        .foregroundStyle(.white)
+                }
                 
             }
-            .padding(.horizontal, 25)
-            .frame(maxHeight: .infinity, alignment: .bottom)
+            .padding(.bottom, 25)
+            
+            Text("Or Sign up with")
+                .opacity(0.8)
+                .font(.callout)
+            
+            HStack(spacing: 20) {
+                Button(action: {}) {
+                    Image("google-logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                        .padding()
+                        .background(.ultraThickMaterial)
+                        .clipShape(.circle)
+                        .overlay {
+                            Circle()
+                            
+                                .strokeBorder(.linearGradient(colors: [.red, .purple], startPoint: .top, endPoint: .bottom))
+                        }
+                }
+                
+                Button(action: {}) {
+                    Image("facebook-logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                        .padding()
+                        .background(.ultraThickMaterial)
+                        .clipShape(.circle)
+                        .overlay {
+                            Circle()
+                            
+                                .strokeBorder(.linearGradient(colors: [.red, .purple], startPoint: .top, endPoint: .bottom))
+                        }
+                }
+                
+                Button(action: {}) {
+                    Image(systemName: "apple.logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                        .padding()
+                        .background(.ultraThickMaterial)
+                        .clipShape(.circle)
+                        .overlay {
+                            Circle()
+                            
+                                .strokeBorder(.linearGradient(colors: [.red, .purple], startPoint: .top, endPoint: .bottom))
+                        }
+                        .foregroundStyle(.foreground)
+                }
+            }
+            .padding(.vertical, 10)
+            
+            
         }
+        .padding(.horizontal, 25)
+        .frame(maxHeight: .infinity, alignment: .bottom)
         .toolbar(.hidden, for: .navigationBar)
     }
 }
 
 #Preview {
     LoginView(navigationPath: .constant([]))
-        .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
 }

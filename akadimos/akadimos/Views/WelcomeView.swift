@@ -19,11 +19,11 @@ struct WelcomeView: View {
                     .resizable()
                     .scaledToFit()
                     .overlay(alignment: .topLeading) {
-                        Text("Rent a House\nfor you.")
+                        Text("Dicover your\nideal House.")
                             .font(.largeTitle.weight(.black))
                             .fontDesign(.rounded)
                             .foregroundStyle(.white.shadow(.inner(color: .gray, radius: 2, x: 5)))
-                            .padding(.horizontal, 50)
+                            .padding(.horizontal, 40)
                             .offset(y: -25)
                     }
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -36,10 +36,9 @@ struct WelcomeView: View {
             Button {
                 navigationPath.append(.login)
             } label: {
-                Text("Book Now")
-                    .font(.title2)
-                    .textCase(.uppercase)
-                    .fontWeight(.bold)
+                Text("Get In")
+                    .font(.title2.weight(.bold))
+                    .fontDesign(.rounded)
                     .padding(.vertical)
                     .padding(.horizontal, 40)
                     .background(Color.btnDarkBlue, in: .rect(cornerRadius: 30))

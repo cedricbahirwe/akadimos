@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $navPath) {
-            WelcomeView(navigationPath: $navPath)
+            GettingStartedView(navigationPath: $navPath)
                 .task(performInitialNavigationSetup)
                 .navigationDestination(for: Route.self, destination: handleDestinationRoute)
 
