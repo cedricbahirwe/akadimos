@@ -1,2 +1,2 @@
 # Akadimos
-A Renting platform
+A platform
