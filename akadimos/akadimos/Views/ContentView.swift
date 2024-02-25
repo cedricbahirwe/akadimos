@@ -24,8 +24,8 @@ struct ContentView: View {
     @ViewBuilder
     private func handleDestinationRoute(_ route: Route) -> some View {
         switch route {
-        case .login:
-            LoginView(navigationPath: $navPath)
+        case .authentication:
+            AuthenticationView(navigationPath: $navPath)
         case .home:
             HomeView(navigationPath: $navPath)
         }

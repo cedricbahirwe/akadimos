@@ -34,7 +34,7 @@ struct WelcomeView: View {
             Spacer()
             
             Button {
-                navigationPath.append(.login)
+                navigationPath.append(.authentication)
             } label: {
                 Text("Get In")
                     .font(.title2.weight(.bold))

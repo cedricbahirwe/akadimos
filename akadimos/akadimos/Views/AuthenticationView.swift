@@ -7,16 +7,28 @@
 
 import SwiftUI
 
-enum AuthFlow {
+private enum AuthFlow {
     case login
     case signup
+}
+
+private struct LoginModel {
+    var username = ""
+    var password = ""
+}
+
+struct SignupModel {
+    var username = ""
+    var email = ""
+    var password = ""
+    var confirmPass = ""
 }
 struct AuthenticationView: View {
     @State private var authFlow: AuthFlow = .signup
     @Binding var navigationPath: [Route]
     
-    @State private var username = ""
-    @State private var password = ""
+    @State private var login = LoginModel()
+    @State private var signup = SignupModel()
     
     private var isLogin: Bool { authFlow == .login }
     var body: some View {
@@ -118,7 +130,7 @@ struct AuthenticationView: View {
 private extension AuthenticationView {
     @ViewBuilder
     var loginFields: some View {
-        TextField("driosman", text: $username)
+        TextField("driosman", text: $login.username)
             .padding()
             .frame(height: 50)
             .overlay(alignment: .bottom) {
@@ -127,7 +139,7 @@ private extension AuthenticationView {
             }
             .font(.callout)
         
-        SecureField("Password", text: $password)
+        SecureField("Password", text: $login.password)
             .padding()
             .frame(height: 50)
             .overlay(alignment: .bottom) {
@@ -144,7 +156,7 @@ private extension AuthenticationView {
             HStack(spacing: 15) {
                 Image("field-name")
                 
-                TextField("Name", text: $username)
+                TextField("Username", text: $signup.username)
             }
             .padding(.horizontal)
             .frame(height: 50)
@@ -156,7 +168,7 @@ private extension AuthenticationView {
             HStack(spacing: 15) {
                 Image("field-email")
                 
-                TextField("Password", text: $username)
+                TextField("Email Address", text: $signup.email)
             }
             .padding(.horizontal)
             .frame(height: 50)
@@ -168,7 +180,7 @@ private extension AuthenticationView {
             HStack(spacing: 15) {
                 Image("field-password")
                 
-                SecureField("Password", text: $username)
+                SecureField("Password", text: $signup.password)
             }
             .padding(.horizontal)
             .frame(height: 50)
@@ -180,7 +192,7 @@ private extension AuthenticationView {
             HStack(spacing: 15) {
                 Image("field-password")
                 
-                SecureField("Confirm Password", text: $username)
+                SecureField("Confirm Password", text: $signup.confirmPass)
             }
             .padding(.horizontal)
             .frame(height: 50)

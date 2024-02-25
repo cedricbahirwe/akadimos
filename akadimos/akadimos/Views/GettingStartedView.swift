@@ -43,7 +43,7 @@ struct GettingStartedView: View {
                 }
                 
                 Button(action: {
-                    navigationPath.append(.login)
+                    navigationPath.append(.authentication)
                 }) {
                     Text("Are you owner?")
                         .fontWeight(.heavy)

@@ -17,7 +17,6 @@
 		CB40A3382B8A1EF100553BD9 /* akadimosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3372B8A1EF100553BD9 /* akadimosUITests.swift */; };
 		CB40A33A2B8A1EF100553BD9 /* akadimosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3392B8A1EF100553BD9 /* akadimosUITestsLaunchTests.swift */; };
 		CB40A34B2B8A22A100553BD9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */; };
-		CB40A34D2B8A2A5500553BD9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34C2B8A2A5500553BD9 /* LoginView.swift */; };
 		CB40A34F2B8A3D1B00553BD9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */; };
 		CB40A3512B8A3ED500553BD9 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */; };
 		CB6BBB572B8AB19600CD6CD3 /* GettingStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */; };
@@ -57,7 +56,6 @@
 		CB40A3372B8A1EF100553BD9 /* akadimosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = akadimosUITests.swift; sourceTree = "<group>"; };
 		CB40A3392B8A1EF100553BD9 /* akadimosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = akadimosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		CB40A34C2B8A2A5500553BD9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedView.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				CB40A3192B8A1EEF00553BD9 /* ContentView.swift */,
 				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
 				CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationView.swift */,
-				CB40A34C2B8A2A5500553BD9 /* LoginView.swift */,
 				CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */,
 				CB40A34E2B8A3D1B00553BD9 /* HomeView.swift */,
 				CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */,
@@ -319,7 +316,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB40A34D2B8A2A5500553BD9 /* LoginView.swift in Sources */,
 				CB6BBB592B8AB60400CD6CD3 /* LoginFancy.swift in Sources */,
 				CB6BBB5D2B8ABDA000CD6CD3 /* AuthenticationView.swift in Sources */,
 				CB40A3512B8A3ED500553BD9 /* NavigationModel.swift in Sources */,

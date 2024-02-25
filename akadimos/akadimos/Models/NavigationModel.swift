@@ -54,9 +54,9 @@ class NavigationModel: ObservableObject, Codable {
         path.removeAll()
     }
     
-    func goToLogin() {
+    func goToAuthentication() {
         path.removeAll()
-        path.append(Route.login)
+        path.append(Route.authentication)
     }
 
     func goBack() {
@@ -69,6 +69,6 @@ class NavigationModel: ObservableObject, Codable {
 }
 
 enum Route: Codable {
-    case login
+    case authentication
     case home
 }
