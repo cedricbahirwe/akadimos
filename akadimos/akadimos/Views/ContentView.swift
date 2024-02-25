@@ -11,12 +11,14 @@ struct ContentView: View {
 //    @StateObject private var navigationModel = NavigationModel()
     @SceneStorage("navigation") private var navigationData: Data?
     @State private var navPath: [Route] = []
+    @State private var tabSelection = TabItem.home
     
     var body: some View {
         NavigationStack(path: $navPath) {
             GettingStartedView(navigationPath: $navPath)
                 .task(performInitialNavigationSetup)
                 .navigationDestination(for: Route.self, destination: handleDestinationRoute)
+            Ta
 
         }
     }
@@ -27,7 +29,9 @@ struct ContentView: View {
         case .authentication:
             AuthenticationView(navigationPath: $navPath)
         case .home:
-            HomeView(navigationPath: $navPath)
+            MainTabView(selection: $tabSelection) {
+                HomeView(navigationPath: $navPath)
+            }
         }
     }
     

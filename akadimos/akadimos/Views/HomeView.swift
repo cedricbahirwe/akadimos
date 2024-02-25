@@ -154,6 +154,7 @@ struct HomeView: View {
             Spacer()
         }
         .background(Color(red: 232/255, green: 232/255, blue: 232/255))
+//        .background(Color(red: 32/255, green: 32/255, blue: 23/255))
         .toolbar(.hidden, for: .navigationBar)
         
     }
