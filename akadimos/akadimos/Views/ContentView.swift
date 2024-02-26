@@ -10,9 +10,10 @@ import SwiftUI
 struct ContentView: View {
 //    @StateObject private var navigationModel = NavigationModel()
     @SceneStorage("navigation") private var navigationData: Data?
-    @State private var navPath: [Route] = []
-    @State private var tabSelection = TabItem.home
-    
+    @State private var navPath: [Route] = [.home]
+    @State private var tabSelection = TabItem.map
+    @StateObject private var locationVM = LocationViewModel()
+
     var body: some View {
         NavigationStack(path: $navPath) {
             GettingStartedView(navigationPath: $navPath)
@@ -41,6 +42,7 @@ struct ContentView: View {
             HomeScreen(navigationPath: $navPath)
         case .map:
             MapScreen()
+                .environmentObject(locationVM)
         case .search:
             SearchScreen()
         case .activity:

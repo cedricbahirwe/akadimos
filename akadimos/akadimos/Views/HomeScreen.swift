@@ -14,6 +14,8 @@ struct HomeScreen: View {
         GridItem(.fixed(70), spacing: 20),
         GridItem(.fixed(70), spacing: 20)
     ]
+    
+    @Environment(\.colorScheme) private var colorScheme
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -43,7 +45,6 @@ struct HomeScreen: View {
                 .shadow(color: .offBlackShadow, radius: 15, x: 10, y: 10)
                 .shadow(color: .offWhiteShadow, radius: 15, x: -10, y: -10)
             }
-            
             .padding(.horizontal)
             
             Section {
@@ -153,10 +154,12 @@ struct HomeScreen: View {
             
             Spacer()
         }
-        .background(Color(red: 232/255, green: 232/255, blue: 232/255))
-//        .background(Color(red: 32/255, green: 32/255, blue: 23/255))
+        .background(
+            colorScheme == .light ?
+            Color(red: 232/255, green: 232/255, blue: 232/255) :
+                Color.black
+        )
         .toolbar(.hidden, for: .navigationBar)
-        
     }
 }
 

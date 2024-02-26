@@ -16,4 +16,5 @@ extension Image {
     static let arrowSwap = Image("arrow-swap-horizontal")
     static let bookmark = Image("bookmark")
     static let search = Image("search-normal")
+    static let searchFilter = Image("search-filter")
 }

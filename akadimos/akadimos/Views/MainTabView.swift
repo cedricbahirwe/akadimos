@@ -17,6 +17,7 @@ struct MainTabView<Content> : View where Content : View {
                 .frame(maxHeight: .infinity)
             TabBarView(selection: $selection)
         }
+        .ignoresSafeArea(.keyboard)
     }
 }
 
