@@ -15,7 +15,6 @@ struct HomeScreen: View {
         GridItem(.fixed(70), spacing: 20)
     ]
     
-    @Environment(\.colorScheme) private var colorScheme
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -154,11 +153,7 @@ struct HomeScreen: View {
             
             Spacer()
         }
-        .background(
-            colorScheme == .light ?
-            Color(red: 232/255, green: 232/255, blue: 232/255) :
-                Color.black
-        )
+        .background(Color.primaryBackground)
         .toolbar(.hidden, for: .navigationBar)
     }
 }
