@@ -11,7 +11,6 @@ extension Image {
     static let loginDoor = Image("login.door")
     static let splashHouse: Image = Image("buy-house")
     
-    
     static let magicStar = Image("magic-star")
     static let arrowSwap = Image("arrow-swap-horizontal")
     static let bookmark = Image("bookmark")
@@ -19,4 +18,8 @@ extension Image {
     static let filterLined = Image("filter-lined")
     static let filterGlass = Image("filter-glass")
 
+    static let discoverCircle = Image("discover.circle")
+    static let locationCircle = Image("location.circle")
+    static let moneySquare = Image("money.square")
+    static let normalStar = Image("normal.star")
 }
