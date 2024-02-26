@@ -12,6 +12,7 @@ struct MapScreen: View {
     @EnvironmentObject private var locationVM: LocationViewModel
     @State private var radius = 6.0
     @State private var showFilter = false
+    var locationRadius: CGFloat { radius * 100 }
     
     var body: some View {
         ZStack {
@@ -29,9 +30,10 @@ struct MapScreen: View {
                 .annotationTitles(.hidden )
                 
                 
-                MapCircle(center: LocationsDataService.userLocation, radius: 200)
+                MapCircle(center: LocationsDataService.userLocation, radius: locationRadius)
                     .foregroundStyle(.blue.opacity(0.3))
                     .stroke(.red)
+                
                 
                 //            UserAnnotation()
             }

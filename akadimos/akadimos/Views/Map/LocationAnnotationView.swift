@@ -16,7 +16,7 @@ struct LocationMapAnnotationView: View {
                 .scaledToFit()
                 .frame(width: 30, height: 30)
                 .font(.headline)
-                .foregroundStyle(.white)
+                .foregroundStyle(.regularMaterial)
                 .padding(6)
                 .background(Color.accentColor)
                 .clipShape(RoundedRectangle(cornerRadius: 36))
