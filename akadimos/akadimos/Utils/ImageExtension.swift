@@ -15,6 +15,8 @@ extension Image {
     static let magicStar = Image("magic-star")
     static let arrowSwap = Image("arrow-swap-horizontal")
     static let bookmark = Image("bookmark")
-    static let search = Image("search-normal")
-    static let searchFilter = Image("search-filter")
+    static let filterMagnify = Image("filter-magnify")
+    static let filterLined = Image("filter-lined")
+    static let filterGlass = Image("filter-glass")
+
 }

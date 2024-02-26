@@ -51,21 +51,13 @@ struct MapScreen: View {
     private var mapOverlayView: some View {
         VStack {
             VStack(spacing: 20) {
-                HStack {
-                    TextField("", text: .constant(""))
-                    Image.searchFilter
-                        .onTapGesture {
-                            withAnimation {
-                                showFilter.toggle()
-                            }
+                
+                SearchField("", text: .constant(""))
+                    .accessoryAction(.filterLined) {
+                        withAnimation {
+                            showFilter.toggle()
                         }
-                }
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background(
-                    .background,
-                    in: .rect(cornerRadius: 12)
-                )
+                    }
                 
                 if showFilter {
                     VStack(alignment: .leading) {

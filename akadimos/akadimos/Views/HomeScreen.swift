@@ -31,16 +31,10 @@ struct HomeScreen: View {
             .padding()
             
             HStack {
-                HStack {
-                    TextField("", text: .constant(""))
-                    Image.search
-                }
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background(
-                    .background,
-                    in: .rect(cornerRadius: 12)
-                )
+                SearchField("", text: .constant(""))
+                    .accessoryAction(.filterMagnify) {
+                        
+                    }
                 .shadow(color: .offBlackShadow, radius: 15, x: 10, y: 10)
                 .shadow(color: .offWhiteShadow, radius: 15, x: -10, y: -10)
             }
@@ -153,7 +147,7 @@ struct HomeScreen: View {
             
             Spacer()
         }
-        .background(Color.primaryBackground)
+        .background(.primaryBackground)
         .toolbar(.hidden, for: .navigationBar)
     }
 }
