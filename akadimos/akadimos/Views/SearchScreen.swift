@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SearchScreen: View {
     @State private var searchEntry = "Calapan"
+
     var body: some View {
-        List(0..<20) { i in
+        List(1..<20) { i in
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 10) {
-                    Image("avatar-1")
+                    Image("avatar-\(Int.random(in: 1...3))")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 60, height: 60)
@@ -30,7 +31,7 @@ struct SearchScreen: View {
                 
                 .padding(10)
                 
-                Image("search-1")
+                Image("search-\(Int.random(in: 1...5))")
                     .resizable()
                     .scaledToFit()
                 
@@ -38,7 +39,7 @@ struct SearchScreen: View {
                     Text("Kimironko apartment")
                         .font(.title2)
                     
-                    Text("200,000 RWF/month")
+                    Text("RWF 200,000/month")
                         .font(.title3)
                         .fontWeight(.regular)
                         .foregroundStyle(.secondary)
