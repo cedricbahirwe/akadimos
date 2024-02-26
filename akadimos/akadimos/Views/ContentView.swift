@@ -12,7 +12,8 @@ struct ContentView: View {
     @SceneStorage("navigation") private var navigationData: Data?
     @State private var navPath: [Route] = []
     @State private var tabSelection = TabItem.home
-    
+    @StateObject private var locationVM = LocationViewModel()
+
     var body: some View {
         NavigationStack(path: $navPath) {
             GettingStartedView(navigationPath: $navPath)
@@ -41,6 +42,8 @@ struct ContentView: View {
             HomeScreen(navigationPath: $navPath)
         case .map:
             MapScreen()
+                .environmentObject(locationVM)
+
         case .search:
             SearchScreen()
         case .activity:

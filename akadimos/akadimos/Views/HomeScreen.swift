@@ -43,7 +43,6 @@ struct HomeScreen: View {
                 .shadow(color: .offBlackShadow, radius: 15, x: 10, y: 10)
                 .shadow(color: .offWhiteShadow, radius: 15, x: -10, y: -10)
             }
-            
             .padding(.horizontal)
             
             Section {

@@ -30,6 +30,9 @@
 		CBFDABB82B8BF0870044DCFA /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDABB72B8BF0870044DCFA /* SearchScreen.swift */; };
 		CBFDABBA2B8BF0950044DCFA /* ActivityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDABB92B8BF0950044DCFA /* ActivityScreen.swift */; };
 		CBFDABBD2B8BF0A50044DCFA /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */; };
+		CBFDABC02B8BF5810044DCFA /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDABBF2B8BF5810044DCFA /* LocationsDataService.swift */; };
+		CBFDABC32B8BF78F0044DCFA /* LocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDABC22B8BF78F0044DCFA /* LocationAnnotationView.swift */; };
+		CBFDABC52B8C05320044DCFA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDABC42B8C05320044DCFA /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		CBFDABB72B8BF0870044DCFA /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		CBFDABB92B8BF0950044DCFA /* ActivityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityScreen.swift; sourceTree = "<group>"; };
 		CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		CBFDABBF2B8BF5810044DCFA /* LocationsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
+		CBFDABC22B8BF78F0044DCFA /* LocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotationView.swift; sourceTree = "<group>"; };
+		CBFDABC42B8C05320044DCFA /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CB40A3172B8A1EEF00553BD9 /* akadimosApp.swift */,
+				CBFDABBE2B8BF56F0044DCFA /* DataSources */,
 				CB40A3492B8A21D600553BD9 /* ViewModels */,
 				CB40A3482B8A21CB00553BD9 /* Utils */,
 				CB40A3472B8A21C800553BD9 /* Models */,
@@ -171,12 +178,12 @@
 				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
 				CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationView.swift */,
 				CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */,
+				CBFDABC12B8BF7780044DCFA /* Map */,
 				CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */,
 				CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */,
 				CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */,
 				CBFDABB72B8BF0870044DCFA /* SearchScreen.swift */,
 				CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */,
-				CBFDABB52B8BF0500044DCFA /* MapScreen.swift */,
 				CBFDABB92B8BF0950044DCFA /* ActivityScreen.swift */,
 				CB6BBB602B8AC9DF00CD6CD3 /* HomeFancy.swift */,
 				CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */,
@@ -188,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */,
+				CBFDABC42B8C05320044DCFA /* LocationViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +213,23 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CBFDABBE2B8BF56F0044DCFA /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				CBFDABBF2B8BF5810044DCFA /* LocationsDataService.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		CBFDABC12B8BF7780044DCFA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CBFDABB52B8BF0500044DCFA /* MapScreen.swift */,
+				CBFDABC22B8BF78F0044DCFA /* LocationAnnotationView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,16 +366,19 @@
 				CB6BBB5D2B8ABDA000CD6CD3 /* AuthenticationView.swift in Sources */,
 				CB6BBB632B8AD8C200CD6CD3 /* TabBarView.swift in Sources */,
 				CBFDABB82B8BF0870044DCFA /* SearchScreen.swift in Sources */,
+				CBFDABC52B8C05320044DCFA /* LocationViewModel.swift in Sources */,
 				CB40A3512B8A3ED500553BD9 /* NavigationModel.swift in Sources */,
 				CB40A34F2B8A3D1B00553BD9 /* HomeScreen.swift in Sources */,
 				CB6BBB612B8AC9DF00CD6CD3 /* HomeFancy.swift in Sources */,
 				CB40A34B2B8A22A100553BD9 /* WelcomeView.swift in Sources */,
 				CB6BBB572B8AB19600CD6CD3 /* GettingStartedView.swift in Sources */,
 				CB40A3212B8A1EF100553BD9 /* Persistence.swift in Sources */,
+				CBFDABC32B8BF78F0044DCFA /* LocationAnnotationView.swift in Sources */,
 				CBFDABB62B8BF0500044DCFA /* MapScreen.swift in Sources */,
 				CBFDABBA2B8BF0950044DCFA /* ActivityScreen.swift in Sources */,
 				CB40A31A2B8A1EEF00553BD9 /* ContentView.swift in Sources */,
 				CBFDABBD2B8BF0A50044DCFA /* ProfileScreen.swift in Sources */,
+				CBFDABC02B8BF5810044DCFA /* LocationsDataService.swift in Sources */,
 				CB40A3242B8A1EF100553BD9 /* akadimos.xcdatamodeld in Sources */,
 				CB6BBB652B8ADE2300CD6CD3 /* MainTabView.swift in Sources */,
 				CB6BBB5B2B8AB80000CD6CD3 /* ImageExtension.swift in Sources */,
