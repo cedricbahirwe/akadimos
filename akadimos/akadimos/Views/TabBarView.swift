@@ -57,6 +57,7 @@ struct TabBarView: View {
         }
         .padding(.horizontal)
         .padding(.top, 8)
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 
