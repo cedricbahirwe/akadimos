@@ -269,9 +269,7 @@ fileprivate struct MiniLabeledStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: 8) {
             configuration.icon
-                .background(.red)
             configuration.title
-                .background(.green)
         }
     }
 }
