@@ -26,9 +26,11 @@ struct SearchScreen: View {
                             .background(
                                 BackgroundStyle.background
                                     .shadow(.inner(color: .offBlackShadow, radius: 15, x: 10, y: 10))
-                                    .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10))
+                                    .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10)),
+                                in: .rect(cornerRadius: 20)
                             )
                     )
+                    .listRowSeparator(.hidden)
                     .transition(.opacity)
             }
             
@@ -41,54 +43,22 @@ struct SearchScreen: View {
                     .background(
                         .background
                             .shadow(.inner(color: .offBlackShadow, radius: 15, x: 10, y: 10))
-                            .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10))
+                            .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10)),
+                        in: .rect(cornerRadius: 20)
                     )
+                
             )
+            .listRowSeparator(.hidden)
         }
-        .listSectionSpacing(020)
         .listRowSpacing(20)
         .scrollContentBackground(.hidden)
+        .scrollIndicators(.hidden)
+        .listStyle(.plain)
+        .padding(.horizontal)
         .background(.primaryBackground)
         .refreshable { }
         .safeAreaInset(edge: .top) {
-            VStack(spacing: 0) {
-                HStack {
-                    Text("Search")
-                        .font(.title.bold())
-                    Spacer()
-                    Image.filterGlass
-                        .onTapGesture {
-                            withAnimation {
-                                showFilter.toggle()
-                            }
-                        }
-                }
-                
-                VStack(alignment: .leading) {
-                    SearchField("", text: $searchEntry)
-                        .accessoryAction(.filterMagnify) {
-                            withAnimation {
-                                isSearching.toggle()
-                            }
-                        }
-                    
-                    if isSearching {
-                        Text("Showing 3 results for \"\(searchEntry)\"")
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .transition(
-                                .asymmetric(
-                                    insertion: .push(from: .top),
-                                    removal: .push(from: .bottom)
-                                )
-                            )
-
-                    }
-                }
-                    .padding(.vertical, 10)
-            }
-            .padding(.horizontal)
-            .background(.primaryBackground.opacity(0.95))
+            topBarView
         }
         .sheet(isPresented: $showFilter) {
             FilterView(filter: filterData) { newData in
@@ -99,6 +69,47 @@ struct SearchScreen: View {
             }
             .presentationDetents([.height(520)])
         }
+    }
+    
+    private var topBarView: some View {
+        VStack(spacing: 0) {
+            HStack {
+                Text("Search")
+                    .font(.title.bold())
+                Spacer()
+                Image.filterGlass
+                    .onTapGesture {
+                        withAnimation {
+                            showFilter.toggle()
+                        }
+                    }
+            }
+            
+            VStack(alignment: .leading) {
+                SearchField("", text: $searchEntry)
+                    .accessoryAction(.filterMagnify) {
+                        withAnimation {
+                            isSearching.toggle()
+                        }
+                    }
+                
+                if isSearching {
+                    Text("Showing 3 results for \"\(searchEntry)\"")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .transition(
+                            .asymmetric(
+                                insertion: .push(from: .top),
+                                removal: .push(from: .bottom)
+                            )
+                        )
+
+                }
+            }
+                .padding(.vertical, 10)
+        }
+        .padding(.horizontal)
+        .background(.primaryBackground.opacity(0.95))
     }
 }
 
@@ -267,7 +278,7 @@ private extension SearchScreen {
 
 fileprivate struct MiniLabeledStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .top, spacing: 8) {
+        HStack(spacing: 8) {
             configuration.icon
             configuration.title
         }
@@ -306,4 +317,9 @@ private struct FilterData: Equatable {
 
 #Preview("FilterView", traits: .sizeThatFitsLayout) {
     SearchScreen.FilterView(filter: .default, onFilter: { _ in })
+}
+
+
+#Preview("FilterResultsView", traits: .sizeThatFitsLayout) {
+    SearchScreen.FilterResultsView(result: .default)
 }
