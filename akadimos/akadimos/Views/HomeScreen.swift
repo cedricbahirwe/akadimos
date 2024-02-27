@@ -15,7 +15,6 @@ struct HomeScreen: View {
         GridItem(.fixed(70), spacing: 20)
     ]
     
-    @Environment(\.colorScheme) private var colorScheme
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -32,16 +31,10 @@ struct HomeScreen: View {
             .padding()
             
             HStack {
-                HStack {
-                    TextField("", text: .constant(""))
-                    Image.search
-                }
-                .padding(.horizontal)
-                .frame(height: 50)
-                .background(
-                    .background,
-                    in: .rect(cornerRadius: 12)
-                )
+                SearchField("", text: .constant(""))
+                    .accessoryAction(.filterMagnify) {
+                        
+                    }
                 .shadow(color: .offBlackShadow, radius: 15, x: 10, y: 10)
                 .shadow(color: .offWhiteShadow, radius: 15, x: -10, y: -10)
             }
@@ -154,11 +147,7 @@ struct HomeScreen: View {
             
             Spacer()
         }
-        .background(
-            colorScheme == .light ?
-            Color(red: 232/255, green: 232/255, blue: 232/255) :
-                Color.black
-        )
+        .background(.primaryBackground)
         .toolbar(.hidden, for: .navigationBar)
     }
 }

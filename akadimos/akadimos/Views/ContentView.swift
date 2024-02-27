@@ -11,7 +11,7 @@ struct ContentView: View {
 //    @StateObject private var navigationModel = NavigationModel()
     @SceneStorage("navigation") private var navigationData: Data?
     @State private var navPath: [Route] = [.home]
-    @State private var tabSelection = TabItem.map
+    @State private var tabSelection = TabItem.search
     @StateObject private var locationVM = LocationViewModel()
 
     var body: some View {

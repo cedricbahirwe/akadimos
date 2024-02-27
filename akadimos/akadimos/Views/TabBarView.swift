@@ -39,6 +39,7 @@ struct TabBarView: View {
                 }
                 .foregroundStyle(
                     selection == item ? Color.accentColor : Color.primary)
+                .padding(.bottom, 5)
                 .overlay(alignment: .bottom) {
                     if selection == item {
                         Color.blue
