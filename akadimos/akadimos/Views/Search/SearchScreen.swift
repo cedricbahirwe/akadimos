@@ -267,9 +267,11 @@ private extension SearchScreen {
 
 fileprivate struct MiniLabeledStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .top, spacing: 8) {
+        HStack(spacing: 8) {
             configuration.icon
+                .background(.red)
             configuration.title
+                .background(.green)
         }
     }
 }
@@ -306,4 +308,9 @@ private struct FilterData: Equatable {
 
 #Preview("FilterView", traits: .sizeThatFitsLayout) {
     SearchScreen.FilterView(filter: .default, onFilter: { _ in })
+}
+
+
+#Preview("FilterResultsView", traits: .sizeThatFitsLayout) {
+    SearchScreen.FilterResultsView(result: .default)
 }
