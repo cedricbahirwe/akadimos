@@ -22,4 +22,9 @@ extension Image {
     static let locationCircle = Image("location.circle")
     static let moneySquare = Image("money.square")
     static let normalStar = Image("normal.star")
+    
+    static let notifAndroid = Image("notif.android")
+    static let notifArchive = Image("notif.archive")
+    static let notifBell = Image("notif.bell")
+    static let notifWallet = Image("notif.wallet")
 }

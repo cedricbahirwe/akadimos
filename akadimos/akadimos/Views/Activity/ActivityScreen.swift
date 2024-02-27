@@ -53,7 +53,11 @@ struct ActivityScreen: View {
         let item: any ActivityProtocol
         var body: some View {
             HStack(spacing: 16) {
-                Image.normalStar
+                if let iconImage = item.icon {
+                    iconImage
+                        .foregroundStyle(Color.accentColor)
+                }
+                
                 VStack(alignment: .leading) {
                     if let author = item.getAuthor() {
                         Text(author)

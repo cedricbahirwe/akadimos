@@ -32,10 +32,10 @@ private struct InAppNotification: ActivityProtocol, Identifiable {
         self.icon = icon
     }
     static let examples: [InAppNotification] = [
-        .init(.arrowSwap, title: "32 new listings near your location", subtitle: "20 minutes ago"),
-        .init(.arrowSwap, title: "You request has been processed", subtitle: "40 minutes ago"),
-        .init(.arrowSwap, title: "You have saved 2 items", subtitle: "Yesterday"),
-        .init(.arrowSwap, title: "New deals available", subtitle: "Yesterday")
+        .init(.notifBell, title: "32 new listings near your location", subtitle: "20 minutes ago"),
+        .init(.notifBell, title: "You request has been processed", subtitle: "40 minutes ago"),
+        .init(.notifArchive, title: "You have saved 2 items", subtitle: "Yesterday"),
+        .init(.notifWallet, title: "New deals available", subtitle: "Yesterday")
     ]
 }
 
@@ -55,7 +55,7 @@ private struct InAppMessage: ActivityProtocol {
     
     static let examples: [InAppMessage] = [
         .init(
-            .magicStar,
+            .notifAndroid,
             author: "John Doe",
             title: "I am very sorry, but the room has already been taken.",
             subtitle: "12 mins ago"
