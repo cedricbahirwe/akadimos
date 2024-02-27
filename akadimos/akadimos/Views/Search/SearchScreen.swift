@@ -30,6 +30,7 @@ struct SearchScreen: View {
                                 in: .rect(cornerRadius: 20)
                             )
                     )
+                    .listRowSeparator(.hidden)
                     .transition(.opacity)
             }
             
@@ -47,53 +48,17 @@ struct SearchScreen: View {
                     )
                 
             )
+            .listRowSeparator(.hidden)
         }
-        .listSectionSpacing(020)
         .listRowSpacing(20)
         .scrollContentBackground(.hidden)
+        .scrollIndicators(.hidden)
         .listStyle(.plain)
         .padding(.horizontal)
         .background(.primaryBackground)
         .refreshable { }
         .safeAreaInset(edge: .top) {
-            VStack(spacing: 0) {
-                HStack {
-                    Text("Search")
-                        .font(.title.bold())
-                    Spacer()
-                    Image.filterGlass
-                        .onTapGesture {
-                            withAnimation {
-                                showFilter.toggle()
-                            }
-                        }
-                }
-                
-                VStack(alignment: .leading) {
-                    SearchField("", text: $searchEntry)
-                        .accessoryAction(.filterMagnify) {
-                            withAnimation {
-                                isSearching.toggle()
-                            }
-                        }
-                    
-                    if isSearching {
-                        Text("Showing 3 results for \"\(searchEntry)\"")
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .transition(
-                                .asymmetric(
-                                    insertion: .push(from: .top),
-                                    removal: .push(from: .bottom)
-                                )
-                            )
-
-                    }
-                }
-                    .padding(.vertical, 10)
-            }
-            .padding(.horizontal)
-            .background(.primaryBackground.opacity(0.95))
+            topBarView
         }
         .sheet(isPresented: $showFilter) {
             FilterView(filter: filterData) { newData in
@@ -104,6 +69,47 @@ struct SearchScreen: View {
             }
             .presentationDetents([.height(520)])
         }
+    }
+    
+    private var topBarView: some View {
+        VStack(spacing: 0) {
+            HStack {
+                Text("Search")
+                    .font(.title.bold())
+                Spacer()
+                Image.filterGlass
+                    .onTapGesture {
+                        withAnimation {
+                            showFilter.toggle()
+                        }
+                    }
+            }
+            
+            VStack(alignment: .leading) {
+                SearchField("", text: $searchEntry)
+                    .accessoryAction(.filterMagnify) {
+                        withAnimation {
+                            isSearching.toggle()
+                        }
+                    }
+                
+                if isSearching {
+                    Text("Showing 3 results for \"\(searchEntry)\"")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .transition(
+                            .asymmetric(
+                                insertion: .push(from: .top),
+                                removal: .push(from: .bottom)
+                            )
+                        )
+
+                }
+            }
+                .padding(.vertical, 10)
+        }
+        .padding(.horizontal)
+        .background(.primaryBackground.opacity(0.95))
     }
 }
 
