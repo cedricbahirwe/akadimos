@@ -180,20 +180,20 @@
 		CB40A3462B8A21C300553BD9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CBEF2C5D2B8D0E8600613755 /* Shared */,
-				CB40A3192B8A1EEF00553BD9 /* ContentView.swift */,
-				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
+				CB62409D2B8E83F800B86B73 /* Activity */,
 				CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationView.swift */,
-				CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */,
-				CBFDABC12B8BF7780044DCFA /* Map */,
-				CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */,
-				CBEF2C622B8D5F9A00613755 /* Search */,
-				CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */,
-				CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */,
-				CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */,
-				CBFDABB92B8BF0950044DCFA /* ActivityScreen.swift */,
-				CB6BBB602B8AC9DF00CD6CD3 /* HomeFancy.swift */,
+				CB40A3192B8A1EEF00553BD9 /* ContentView.swift */,
 				CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */,
+				CB6BBB602B8AC9DF00CD6CD3 /* HomeFancy.swift */,
+				CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */,
+				CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */,
+				CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */,
+				CBFDABC12B8BF7780044DCFA /* Map */,
+				CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */,
+				CBEF2C622B8D5F9A00613755 /* Search */,
+				CBEF2C5D2B8D0E8600613755 /* Shared */,
+				CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */,
+				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +221,14 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CB62409D2B8E83F800B86B73 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				CBFDABB92B8BF0950044DCFA /* ActivityScreen.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		CBEF2C5D2B8D0E8600613755 /* Shared */ = {

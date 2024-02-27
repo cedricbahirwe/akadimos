@@ -26,7 +26,8 @@ struct SearchScreen: View {
                             .background(
                                 BackgroundStyle.background
                                     .shadow(.inner(color: .offBlackShadow, radius: 15, x: 10, y: 10))
-                                    .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10))
+                                    .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10)),
+                                in: .rect(cornerRadius: 20)
                             )
                     )
                     .transition(.opacity)
@@ -41,13 +42,17 @@ struct SearchScreen: View {
                     .background(
                         .background
                             .shadow(.inner(color: .offBlackShadow, radius: 15, x: 10, y: 10))
-                            .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10))
+                            .shadow(.inner(color: .offWhiteShadow, radius: 15, x: -10, y: -10)),
+                        in: .rect(cornerRadius: 20)
                     )
+                
             )
         }
         .listSectionSpacing(020)
         .listRowSpacing(20)
         .scrollContentBackground(.hidden)
+        .listStyle(.plain)
+        .padding(.horizontal)
         .background(.primaryBackground)
         .refreshable { }
         .safeAreaInset(edge: .top) {
