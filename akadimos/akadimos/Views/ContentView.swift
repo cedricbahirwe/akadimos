@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 //    @StateObject private var navigationModel = NavigationModel()
-    @SceneStorage("navigation") private var navigationData: Data?
     @State private var tabSelection = TabItem.profile
     @StateObject private var locationVM = LocationViewModel()
     @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
@@ -21,7 +20,9 @@ struct ContentView: View {
                     .toolbar(.hidden, for: .navigationBar)
             }
         } else {
-            GettingStartedView()
+            NavigationStack {
+                GettingStartedView()
+            }
         }
     }
     
