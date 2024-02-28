@@ -13,10 +13,13 @@ private enum FlowRoute  {
     case help
     case settings
     case editprofile
-    case logout
 }
+
 struct ProfileScreen: View {
     @State private var path: [FlowRoute] = []
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+    @AppStorage("tabSelection") private var tabSelection = TabItem.profile
+
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
@@ -93,12 +96,15 @@ struct ProfileScreen: View {
                         path.append(.help)
                     }
                     labeledView("Settings", .profileSettings) { }
-                    labeledView("Logout", .profileLogout) { }
-                    
-                    Spacer()
+                    labeledView("Logout", .profileLogout) {
+                        isLoggedIn = false
+                        tabSelection = .home
+                    }
                 }
                 .padding(20)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
+
             }
             .background(.primaryBackground)
             .navigationDestination(for: FlowRoute.self, destination: handleDestinationRoute)
@@ -118,8 +124,6 @@ struct ProfileScreen: View {
             HelpScreen()
         case .settings:
             fatalError()
-        case .logout:
-            fatalError()
         }
     }
 }
@@ -133,6 +137,7 @@ private extension ProfileScreen {
                 icon: { image }
             )
             .tint(.primary)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
