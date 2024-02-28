@@ -16,8 +16,6 @@ struct ActionItem: Identifiable {
 }
 
 struct HomeFancy: View {
-    @Binding var navigationPath: [Route]
-
     private let items: [ActionItem] = [
         .init(image: "near-by", title: "Near By"),
         .init(image: "click-room", title: "Book Room"),
@@ -104,5 +102,5 @@ struct HomeFancy: View {
 }
 
 #Preview {
-    HomeFancy(navigationPath: .constant([]))
+    HomeFancy()
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @Binding var navigationPath: [Route]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -34,7 +33,6 @@ struct WelcomeView: View {
             Spacer()
             
             Button {
-                navigationPath.append(.authentication)
             } label: {
                 Text("Get In")
                     .font(.title2.weight(.bold))
@@ -54,5 +52,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView(navigationPath: .constant([]))
+    WelcomeView()
 }

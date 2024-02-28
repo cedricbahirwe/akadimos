@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct GettingStartedView: View {
-    @Binding var navigationPath: [Route]
-
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -30,9 +28,9 @@ struct GettingStartedView: View {
             Spacer()
             
             VStack(spacing: 15) {
-                Button(action: {
-                    navigationPath.append(.authentication)
-                }) {
+                NavigationLink {
+                    AuthenticationView()
+                } label: {
                     Text("Are you a user?")
                         .fontWeight(.heavy)
                         .padding()
@@ -44,9 +42,10 @@ struct GettingStartedView: View {
                         .foregroundStyle(.foreground)
                 }
                 
-                Button(action: {
-                    navigationPath.append(.authentication)
-                }) {
+                
+                NavigationLink {
+                    AuthenticationView()
+                } label: {
                     Text("Are you owner?")
                         .fontWeight(.heavy)
                         .padding()
@@ -64,6 +63,5 @@ struct GettingStartedView: View {
 }
 
 #Preview {
-    GettingStartedView(navigationPath: .constant([]))
-//        .preferredColorScheme(.dark)
+    GettingStartedView()
 }

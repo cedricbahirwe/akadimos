@@ -1,0 +1,146 @@
+//
+//  EditProfileScreen.swift
+//  akadimos
+//
+//  Created by Cédric Bahirwe on 28/02/2024.
+//
+
+import SwiftUI
+
+private struct ProfileInfo {
+    var firstName = "Drios"
+    var lastName = "Man"
+    var mobileNumber = "1234567890"
+    var email = "abc@gmail.com"
+    var address = "Kigali City, Remera"
+}
+
+struct EditProfileScreen: View {
+    @State private var profile = ProfileInfo()
+    @Environment(\.dismiss) private var dismiss
+    var body: some View {
+        ScrollView {
+            Image.notifAndroid
+                .resizable()
+                .colorInvert()
+                .padding()
+                .frame(width: 100, height: 100)
+                .background(.black, in: .circle)
+                .shadow(radius: 3)
+                .overlay(alignment: .bottom) {
+                    Button(action: {}) {
+                        Image.edit
+                            .padding(5)
+                            .background(.ultraThinMaterial, in: .circle)
+                            .foregroundStyle(.white)
+                            .padding(10)
+                    }
+                }
+            
+            VStack(alignment: .leading) {
+                Text("Person Details")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                
+                HStack(spacing: 20){
+                    FieldView("First Name", text: $profile.firstName)
+                    FieldView("Last Name", text: $profile.lastName)
+                }
+                
+                FieldView("Mobile Number", text: $profile.mobileNumber)
+                
+                FieldView("Email Address", text: $profile.email)
+                
+                FieldView("Address", text: $profile.address)
+            }
+            .padding(.horizontal)
+
+        }
+        .safeAreaInset(edge: .bottom) {
+            HStack(spacing: 20) {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Cancel")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 40)
+                }
+                .buttonBorderShape(.roundedRectangle(radius: 15))
+                .buttonStyle(.borderedProminent)
+                .tint(.gray.opacity(0.3))
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
+                .foregroundStyle(.foreground)
+                
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Save")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 40)
+                }
+                .buttonBorderShape(.roundedRectangle(radius: 15))
+                .buttonStyle(.borderedProminent)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
+                
+            }
+            .padding(.top, 8)
+            .padding(.horizontal)
+            .background(.ultraThinMaterial)
+        }
+        .safeAreaInset(edge: .top) {
+            HStack(spacing: 20) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    Label("Go back", systemImage: "chevron.left")
+                        .fontDesign(.rounded)
+                        .fontWeight(.bold)
+                        .labelStyle(.iconOnly)
+                        .frame(width: 35, height: 35)
+                        .background(.blue, in: .rect(cornerRadius: 8))
+                        .foregroundStyle(.white)
+                }
+                
+                Text("Edit Profile")
+                    .font(.title2)
+                    .fontWeight(.bold)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding([.horizontal, .bottom])
+            .background(.ultraThinMaterial)
+        }
+    }
+    
+    
+    struct FieldView: View {
+        let title: LocalizedStringKey
+        let placeholder: LocalizedStringKey
+        @Binding private var text: String
+        init(_ title: LocalizedStringKey, placeholder: LocalizedStringKey = "", text: Binding<String>) {
+            self.title = title
+            self.placeholder = placeholder
+            self._text = text
+        }
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text(title)
+                    .font(.title3)
+                    .fontWeight(.medium)
+                TextField(placeholder, text: $text)
+                    .padding()
+                    .background(.regularMaterial, in: .rect(cornerRadius: 8))
+            }
+        }
+    }
+}
+
+#Preview {
+    EditProfileScreen()
+}

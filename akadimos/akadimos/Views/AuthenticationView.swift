@@ -26,11 +26,10 @@ struct SignupModel {
 }
 struct AuthenticationView: View {
     @State private var authFlow: AuthFlow = .login
-    @Binding var navigationPath: [Route]
-    
     @State private var login = LoginModel()
     @State private var signup = SignupModel()
-    
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+
     private var isLogin: Bool { authFlow == .login }
     var body: some View {
         VStack {
@@ -105,7 +104,7 @@ struct AuthenticationView: View {
                 .bold()
                 
                 Button {
-                    navigationPath.append(.home)
+                    isLoggedIn = true
                 } label: {
                     Text(isLogin ? "Login" : "Register")
                         .font(.title2.weight(.bold))
@@ -266,5 +265,5 @@ private extension AuthenticationView {
 }
 
 #Preview {
-    AuthenticationView(navigationPath: .constant([]))
+    AuthenticationView()
 }

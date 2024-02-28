@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension Image {
+    static let edit = Image("edit")
     static let loginDoor = Image("login.door")
     static let splashHouse: Image = Image("buy-house")
     
@@ -27,4 +28,11 @@ extension Image {
     static let notifArchive = Image("notif.archive")
     static let notifBell = Image("notif.bell")
     static let notifWallet = Image("notif.wallet")
+    
+    static let profileBookmark = Image("profile.bookmark")
+    static let profileDocument = Image("profile.document")
+    static let profileLogout = Image("profile.logout")
+    static let profileQuestion = Image("profile.question")
+    static let profileSettings = Image("profile.settings")
+    
 }
