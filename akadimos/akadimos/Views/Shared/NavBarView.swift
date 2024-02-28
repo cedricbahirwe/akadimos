@@ -9,12 +9,14 @@ import SwiftUI
 
 struct NavBarView<TrailingContent>: View where TrailingContent: View {
     private let title: LocalizedStringKey
-    private let onGoBack: () -> Void
+    private let onGoBack: (() -> Void)?
     private let trailingItem: () -> TrailingContent
     
+    @Environment(\.dismiss) private var dismiss
+    
     init(_ title: LocalizedStringKey,
-         onGoBack: @escaping () -> Void,
-         trailingItem: @escaping () -> TrailingContent = { EmptyView() }) {
+         trailingItem: @escaping () -> TrailingContent = { EmptyView() },
+         onGoBack: (() -> Void)? = nil) {
         self.title = title
         self.onGoBack = onGoBack
         self.trailingItem = trailingItem
@@ -23,7 +25,11 @@ struct NavBarView<TrailingContent>: View where TrailingContent: View {
     var body: some View {
         HStack(spacing: 18) {
             Button(action: {
-                onGoBack()
+                if let onGoBack {
+                    onGoBack()
+                } else {
+                    dismiss()
+                }
             }) {
                 Label("Go back", systemImage: "chevron.left")
                     .fontDesign(.rounded)

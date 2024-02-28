@@ -7,9 +7,18 @@
 
 import SwiftUI
 
+private enum FlowRoute  {
+    case bookmarks
+    case applications
+    case help
+    case settings
+    case editprofile
+    case logout
+}
 struct ProfileScreen: View {
+    @State private var path: [FlowRoute] = []
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack {
                 VStack(spacing: 0) {
                     
@@ -59,7 +68,7 @@ struct ProfileScreen: View {
                 .padding(.bottom, 50)
                 
                 Button(action: {
-                    
+                    path.append(.editprofile)
                 }, label: {
                     Label(
                         title: { Text("Edit Profile") },
@@ -76,9 +85,13 @@ struct ProfileScreen: View {
                 .padding(.bottom, 30)
                 
                 VStack(alignment: .leading, spacing: 30) {
-                    labeledView("Bookmarks", .profileBookmark) { }
+                    labeledView("Bookmarks", .profileBookmark) {
+                        path.append(.bookmarks)
+                    }
                     labeledView("Applications", .profileDocument) { }
-                    labeledView("Help", .profileQuestion) { }
+                    labeledView("Help", .profileQuestion) {
+                        path.append(.help)
+                    }
                     labeledView("Settings", .profileSettings) { }
                     labeledView("Logout", .profileLogout) { }
                     
@@ -88,9 +101,30 @@ struct ProfileScreen: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .background(.primaryBackground)
+            .navigationDestination(for: FlowRoute.self, destination: handleDestinationRoute)
         }
     }
     
+    @ViewBuilder
+    private func handleDestinationRoute(_ route: FlowRoute) -> some View {
+        switch route {
+        case .editprofile:
+            EditProfileScreen()
+        case .bookmarks:
+            BookmarksScreen()
+        case .applications:
+            fatalError()
+        case .help:
+            HelpScreen()
+        case .settings:
+            fatalError()
+        case .logout:
+            fatalError()
+        }
+    }
+}
+
+private extension ProfileScreen {
     @ViewBuilder
     func labeledView(_ title: LocalizedStringKey, _ image: Image, action: @escaping () -> Void) -> some View {
         Button(action: action) {

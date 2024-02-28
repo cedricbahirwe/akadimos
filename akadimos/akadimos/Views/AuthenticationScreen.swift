@@ -1,5 +1,5 @@
 //
-//  AuthenticationView.swift
+//  AuthenticationScreen.swift
 //  akadimos
 //
 //  Created by Cédric Bahirwe on 25/02/2024.
@@ -24,7 +24,7 @@ struct SignupModel {
     var confirmPass = ""
     var agreeToTerms = false
 }
-struct AuthenticationView: View {
+struct AuthenticationScreen: View {
     @State private var authFlow: AuthFlow = .login
     @State private var login = LoginModel()
     @State private var signup = SignupModel()
@@ -130,7 +130,7 @@ struct AuthenticationView: View {
     }
 }
 
-private extension AuthenticationView {
+private extension AuthenticationScreen {
     @ViewBuilder
     var loginFields: some View {
         TextField("driosman", text: $login.username)
@@ -265,5 +265,5 @@ private extension AuthenticationView {
 }
 
 #Preview {
-    AuthenticationView()
+    AuthenticationScreen()
 }

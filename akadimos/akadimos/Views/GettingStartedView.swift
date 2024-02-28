@@ -29,7 +29,7 @@ struct GettingStartedView: View {
             
             VStack(spacing: 15) {
                 NavigationLink {
-                    AuthenticationView()
+                    AuthenticationScreen()
                 } label: {
                     Text("Are you a user?")
                         .fontWeight(.heavy)
@@ -44,7 +44,7 @@ struct GettingStartedView: View {
                 
                 
                 NavigationLink {
-                    AuthenticationView()
+                    AuthenticationScreen()
                 } label: {
                     Text("Are you owner?")
                         .fontWeight(.heavy)

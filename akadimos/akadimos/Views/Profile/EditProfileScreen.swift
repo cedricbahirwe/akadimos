@@ -95,8 +95,9 @@ struct EditProfileScreen: View {
             .background(.ultraThinMaterial)
         }
         .safeAreaInset(edge: .top) {
-            NavBarView("Edit Profile", onGoBack: {})
+            NavBarView("Edit Profile")
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
     
     
