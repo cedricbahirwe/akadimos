@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 //    @StateObject private var navigationModel = NavigationModel()
-    @State private var tabSelection = TabItem.profile
     @StateObject private var locationVM = LocationViewModel()
+    @AppStorage("tabSelection") private var tabSelection = TabItem.profile
     @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
     
     var body: some View {

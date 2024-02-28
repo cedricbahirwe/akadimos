@@ -95,26 +95,7 @@ struct EditProfileScreen: View {
             .background(.ultraThinMaterial)
         }
         .safeAreaInset(edge: .top) {
-            HStack(spacing: 20) {
-                Button(action: {
-                    dismiss()
-                }) {
-                    Label("Go back", systemImage: "chevron.left")
-                        .fontDesign(.rounded)
-                        .fontWeight(.bold)
-                        .labelStyle(.iconOnly)
-                        .frame(width: 35, height: 35)
-                        .background(.blue, in: .rect(cornerRadius: 8))
-                        .foregroundStyle(.white)
-                }
-                
-                Text("Edit Profile")
-                    .font(.title2)
-                    .fontWeight(.bold)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding([.horizontal, .bottom])
-            .background(.ultraThinMaterial)
+            NavBarView("Edit Profile", onGoBack: {})
         }
     }
     
