@@ -38,8 +38,17 @@ struct BookmarksScreen: View {
         .padding(.horizontal)
         .background(.primaryBackground)
         .safeAreaInset(edge: .top) {
-            NavBarView("Bookmarks", onGoBack: {})
-            
+            NavBarView("Bookmarks",
+                       onGoBack: {}) {
+                Button(action: {}) {
+                    Label("Delete", systemImage: "trash")
+                        .labelStyle(.iconOnly)
+                        .padding(.vertical, 3)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.red)
+                .foregroundStyle(.white)
+            }
         }
     }
 }

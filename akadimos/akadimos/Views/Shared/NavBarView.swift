@@ -7,17 +7,21 @@
 
 import SwiftUI
 
-struct NavBarView: View {
+struct NavBarView<TrailingContent>: View where TrailingContent: View {
     private let title: LocalizedStringKey
     private let onGoBack: () -> Void
+    private let trailingItem: () -> TrailingContent
     
-    init(_ title: LocalizedStringKey, onGoBack: @escaping () -> Void) {
+    init(_ title: LocalizedStringKey,
+         onGoBack: @escaping () -> Void,
+         trailingItem: @escaping () -> TrailingContent = { EmptyView() }) {
         self.title = title
         self.onGoBack = onGoBack
+        self.trailingItem = trailingItem
     }
     
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 18) {
             Button(action: {
                 onGoBack()
             }) {
@@ -34,8 +38,10 @@ struct NavBarView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .lineLimit(1)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            trailingItem()
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .padding([.horizontal, .bottom])
         .background(.ultraThinMaterial)
     }
