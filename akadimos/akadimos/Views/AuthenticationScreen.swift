@@ -1,5 +1,5 @@
 //
-//  AuthenticationView.swift
+//  AuthenticationScreen.swift
 //  akadimos
 //
 //  Created by Cédric Bahirwe on 25/02/2024.
@@ -24,13 +24,12 @@ struct SignupModel {
     var confirmPass = ""
     var agreeToTerms = false
 }
-struct AuthenticationView: View {
+struct AuthenticationScreen: View {
     @State private var authFlow: AuthFlow = .login
-    @Binding var navigationPath: [Route]
-    
     @State private var login = LoginModel()
     @State private var signup = SignupModel()
-    
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+
     private var isLogin: Bool { authFlow == .login }
     var body: some View {
         VStack {
@@ -105,7 +104,7 @@ struct AuthenticationView: View {
                 .bold()
                 
                 Button {
-                    navigationPath.append(.home)
+                    isLoggedIn = true
                 } label: {
                     Text(isLogin ? "Login" : "Register")
                         .font(.title2.weight(.bold))
@@ -131,7 +130,7 @@ struct AuthenticationView: View {
     }
 }
 
-private extension AuthenticationView {
+private extension AuthenticationScreen {
     @ViewBuilder
     var loginFields: some View {
         TextField("driosman", text: $login.username)
@@ -266,5 +265,5 @@ private extension AuthenticationView {
 }
 
 #Preview {
-    AuthenticationView(navigationPath: .constant([]))
+    AuthenticationScreen()
 }

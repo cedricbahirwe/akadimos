@@ -9,28 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
 //    @StateObject private var navigationModel = NavigationModel()
-    @SceneStorage("navigation") private var navigationData: Data?
-    @State private var navPath: [Route] = [.home]
-    @State private var tabSelection = TabItem.search
     @StateObject private var locationVM = LocationViewModel()
-
-    var body: some View {
-        NavigationStack(path: $navPath) {
-            GettingStartedView(navigationPath: $navPath)
-                .task(performInitialNavigationSetup)
-                .navigationDestination(for: Route.self, destination: handleDestinationRoute)
-        }
-    }
+    @AppStorage("tabSelection") private var tabSelection = TabItem.profile
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
     
-    @ViewBuilder
-    private func handleDestinationRoute(_ route: Route) -> some View {
-        switch route {
-        case .authentication:
-            AuthenticationView(navigationPath: $navPath)
-        case .home:
+    var body: some View {
+        if isLoggedIn {
             MainTabView(selection: $tabSelection) {
                 activeTabScreen()
                     .toolbar(.hidden, for: .navigationBar)
+            }
+        } else {
+            NavigationStack {
+                GettingStartedView()
             }
         }
     }
@@ -39,7 +30,7 @@ struct ContentView: View {
     func activeTabScreen() -> some View {
         switch tabSelection {
         case .home:
-            HomeScreen(navigationPath: $navPath)
+            HomeScreen()
         case .map:
             MapScreen()
                 .environmentObject(locationVM)

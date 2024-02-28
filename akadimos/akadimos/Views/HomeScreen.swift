@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @Binding var navigationPath: [Route]
-    
     private let rows = [
         GridItem(.fixed(70), spacing: 20),
         GridItem(.fixed(70), spacing: 20)
@@ -153,6 +151,6 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    HomeScreen(navigationPath: .constant([]))
+    HomeScreen()
 //        .preferredColorScheme(.dark)
 }

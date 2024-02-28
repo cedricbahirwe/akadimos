@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+enum Route: Codable { case empty }
 class NavigationModel: ObservableObject, Codable {
     @Published var path: [Route]
     
@@ -45,20 +46,12 @@ class NavigationModel: ObservableObject, Codable {
         try container.encode(path, forKey: .path)
     }
     
-    func goToHome() {
-        path.append(Route.home)
-    }
-    
 
     func goToWelcome() {
         path.removeAll()
     }
     
-    func goToAuthentication() {
-        path.removeAll()
-        path.append(Route.authentication)
-    }
-
+   
     func goBack() {
         path.removeLast()
     }
@@ -66,9 +59,4 @@ class NavigationModel: ObservableObject, Codable {
     enum CodingKeys: String, CodingKey {
         case path
     }
-}
-
-enum Route: Codable {
-    case authentication
-    case home
 }

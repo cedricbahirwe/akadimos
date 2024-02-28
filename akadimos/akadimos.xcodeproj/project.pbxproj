@@ -23,10 +23,14 @@
 		CB6BBB572B8AB19600CD6CD3 /* GettingStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */; };
 		CB6BBB592B8AB60400CD6CD3 /* LoginFancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */; };
 		CB6BBB5B2B8AB80000CD6CD3 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB5A2B8AB80000CD6CD3 /* ImageExtension.swift */; };
-		CB6BBB5D2B8ABDA000CD6CD3 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationView.swift */; };
+		CB6BBB5D2B8ABDA000CD6CD3 /* AuthenticationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationScreen.swift */; };
 		CB6BBB612B8AC9DF00CD6CD3 /* HomeFancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB602B8AC9DF00CD6CD3 /* HomeFancy.swift */; };
 		CB6BBB632B8AD8C200CD6CD3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */; };
 		CB6BBB652B8ADE2300CD6CD3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */; };
+		CB843C282B8F6CAF003B659C /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB843C272B8F6CAF003B659C /* EditProfileScreen.swift */; };
+		CB843C2A2B8FD447003B659C /* BookmarksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB843C292B8FD447003B659C /* BookmarksScreen.swift */; };
+		CB843C2C2B8FD54C003B659C /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB843C2B2B8FD54C003B659C /* NavBarView.swift */; };
+		CB843C2E2B8FDB73003B659C /* HelpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB843C2D2B8FDB73003B659C /* HelpScreen.swift */; };
 		CBEF2C5F2B8D0F0000613755 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF2C5E2B8D0F0000613755 /* SearchField.swift */; };
 		CBEF2C612B8D3F1C00613755 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF2C602B8D3F1C00613755 /* ViewExtension.swift */; };
 		CBEF2C642B8D5FAF00613755 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF2C632B8D5FAF00613755 /* RatingView.swift */; };
@@ -76,10 +80,14 @@
 		CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedView.swift; sourceTree = "<group>"; };
 		CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFancy.swift; sourceTree = "<group>"; };
 		CB6BBB5A2B8AB80000CD6CD3 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
-		CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationScreen.swift; sourceTree = "<group>"; };
 		CB6BBB602B8AC9DF00CD6CD3 /* HomeFancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFancy.swift; sourceTree = "<group>"; };
 		CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		CB843C272B8F6CAF003B659C /* EditProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
+		CB843C292B8FD447003B659C /* BookmarksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksScreen.swift; sourceTree = "<group>"; };
+		CB843C2B2B8FD54C003B659C /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		CB843C2D2B8FDB73003B659C /* HelpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpScreen.swift; sourceTree = "<group>"; };
 		CBEF2C5E2B8D0F0000613755 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		CBEF2C602B8D3F1C00613755 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		CBEF2C632B8D5FAF00613755 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -182,8 +190,9 @@
 		CB40A3462B8A21C300553BD9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB843C242B8F5CBB003B659C /* Profile */,
 				CB62409D2B8E83F800B86B73 /* Activity */,
-				CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationView.swift */,
+				CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationScreen.swift */,
 				CB40A3192B8A1EEF00553BD9 /* ContentView.swift */,
 				CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */,
 				CB6BBB602B8AC9DF00CD6CD3 /* HomeFancy.swift */,
@@ -191,7 +200,6 @@
 				CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */,
 				CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */,
 				CBFDABC12B8BF7780044DCFA /* Map */,
-				CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */,
 				CBEF2C622B8D5F9A00613755 /* Search */,
 				CBEF2C5D2B8D0E8600613755 /* Shared */,
 				CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */,
@@ -234,11 +242,23 @@
 			path = Activity;
 			sourceTree = "<group>";
 		};
+		CB843C242B8F5CBB003B659C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */,
+				CB843C292B8FD447003B659C /* BookmarksScreen.swift */,
+				CB843C272B8F6CAF003B659C /* EditProfileScreen.swift */,
+				CB843C2D2B8FDB73003B659C /* HelpScreen.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		CBEF2C5D2B8D0E8600613755 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				CBEF2C5E2B8D0F0000613755 /* SearchField.swift */,
 				CBEF2C632B8D5FAF00613755 /* RatingView.swift */,
+				CB843C2B2B8FD54C003B659C /* NavBarView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -399,10 +419,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6BBB592B8AB60400CD6CD3 /* LoginFancy.swift in Sources */,
-				CB6BBB5D2B8ABDA000CD6CD3 /* AuthenticationView.swift in Sources */,
+				CB6BBB5D2B8ABDA000CD6CD3 /* AuthenticationScreen.swift in Sources */,
 				CB6BBB632B8AD8C200CD6CD3 /* TabBarView.swift in Sources */,
 				CBEF2C642B8D5FAF00613755 /* RatingView.swift in Sources */,
+				CB843C2C2B8FD54C003B659C /* NavBarView.swift in Sources */,
 				CBFDABB82B8BF0870044DCFA /* SearchScreen.swift in Sources */,
+				CB843C282B8F6CAF003B659C /* EditProfileScreen.swift in Sources */,
+				CB843C2E2B8FDB73003B659C /* HelpScreen.swift in Sources */,
 				CBEF2C5F2B8D0F0000613755 /* SearchField.swift in Sources */,
 				CBFDABC52B8C05320044DCFA /* LocationViewModel.swift in Sources */,
 				CB40A3512B8A3ED500553BD9 /* NavigationModel.swift in Sources */,
@@ -418,6 +441,7 @@
 				CB40A31A2B8A1EEF00553BD9 /* ContentView.swift in Sources */,
 				CBFDABBD2B8BF0A50044DCFA /* ProfileScreen.swift in Sources */,
 				CBFDABC02B8BF5810044DCFA /* LocationsDataService.swift in Sources */,
+				CB843C2A2B8FD447003B659C /* BookmarksScreen.swift in Sources */,
 				CB40A3242B8A1EF100553BD9 /* akadimos.xcdatamodeld in Sources */,
 				CBEF2C612B8D3F1C00613755 /* ViewExtension.swift in Sources */,
 				CB6BBB652B8ADE2300CD6CD3 /* MainTabView.swift in Sources */,

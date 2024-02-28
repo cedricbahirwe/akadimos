@@ -23,6 +23,6 @@ struct MainTabView<Content> : View where Content : View {
 
 #Preview {
     MainTabView(selection: .constant(.home)) {
-        HomeScreen(navigationPath: .constant([]))
+        HomeScreen()
     }
 }
