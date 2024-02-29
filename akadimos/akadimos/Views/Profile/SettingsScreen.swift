@@ -36,7 +36,7 @@ struct SettingsScreen: View {
             }
             
             Section {
-                Toggle(isOn: $enablePushNotifications) {
+                Toggle(isOn: $enableDarkMode) {
                     Label(
                         title: { Text("Enable Dark Mode") },
                         icon: { Image.lockCircle }
@@ -58,6 +58,7 @@ struct SettingsScreen: View {
             NavBarView("Settings")
         }
         .background(.primaryBackground)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

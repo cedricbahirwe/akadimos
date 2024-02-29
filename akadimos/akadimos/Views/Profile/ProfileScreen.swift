@@ -91,11 +91,15 @@ struct ProfileScreen: View {
                     labeledView("Bookmarks", .profileBookmark) {
                         path.append(.bookmarks)
                     }
-                    labeledView("Applications", .profileDocument) { }
+                    labeledView("Applications", .profileDocument) {
+                        path.append(.applications)
+                    }
                     labeledView("Help", .profileQuestion) {
                         path.append(.help)
                     }
-                    labeledView("Settings", .profileSettings) { }
+                    labeledView("Settings", .profileSettings) {
+                        path.append(.settings)
+                    }
                     labeledView("Logout", .profileLogout) {
                         isLoggedIn = false
                         tabSelection = .home
@@ -119,11 +123,11 @@ struct ProfileScreen: View {
         case .bookmarks:
             BookmarksScreen()
         case .applications:
-            fatalError()
+            ApplicationsScreen()
         case .help:
             HelpScreen()
         case .settings:
-            fatalError()
+            SettingsScreen()
         }
     }
 }
