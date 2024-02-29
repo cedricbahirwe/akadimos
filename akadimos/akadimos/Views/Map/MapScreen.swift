@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapScreen: View {
-    @EnvironmentObject private var locationVM: LocationViewModel
+    @StateObject private var locationVM = LocationViewModel()
     @State private var radius = 6.0
     @State private var showFilter = false
     var locationRadius: CGFloat { radius * 100 }
@@ -140,6 +140,4 @@ struct MapScreen: View {
 
 #Preview {
     MapScreen()
-        .background(.gray)
-        .environmentObject(LocationViewModel())
 }
