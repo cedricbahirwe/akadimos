@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @StateObject private var navigationModel = NavigationModel()
-    @StateObject private var locationVM = LocationViewModel()
     @AppStorage("tabSelection") private var tabSelection = TabItem.profile
     @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
     
@@ -33,7 +31,6 @@ struct ContentView: View {
             HomeScreen()
         case .map:
             MapScreen()
-                .environmentObject(locationVM)
         case .search:
             SearchScreen()
         case .activity:
@@ -41,18 +38,6 @@ struct ContentView: View {
         case .profile:
             ProfileScreen()
         }
-    }
-    
-    @Sendable
-    private func performInitialNavigationSetup() async {
-//        if let navigationData {
-//            navigationModel.jsonData = navigationData
-//        }
-//        
-//
-//        for await _ in navigationModel.objectWillChangeSequence {
-//            navigationData = navigationModel.jsonData
-//        }
     }
 }
 

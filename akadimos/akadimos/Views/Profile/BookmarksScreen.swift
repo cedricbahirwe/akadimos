@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct BookmarksScreen: View {
+    @State private var numbers = [1, 2, 3, 4, 5]
     var body: some View {
         List {
-            ForEach(0 ..< 5) { item in
+            ForEach(numbers, id: \.self) { item in
                 HStack {
                     Image("house-1")
                         .resizable()
@@ -43,7 +44,11 @@ struct BookmarksScreen: View {
         .background(.primaryBackground)
         .safeAreaInset(edge: .top) {
             NavBarView("Bookmarks", trailingItem: {
-                Button(action: {}) {
+                Button(action: {
+                    withAnimation {
+                        _ = numbers.removeLast()
+                    }
+                }) {
                     Label("Delete", systemImage: "trash")
                         .labelStyle(.iconOnly)
                         .padding(.vertical, 3)

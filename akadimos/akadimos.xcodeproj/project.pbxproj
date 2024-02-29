@@ -20,6 +20,8 @@
 		CB40A34F2B8A3D1B00553BD9 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */; };
 		CB40A3512B8A3ED500553BD9 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */; };
 		CB6240D72B8E9F9100B86B73 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6240D62B8E9F9100B86B73 /* ActivityModel.swift */; };
+		CB69BD192B912CCD00A72A74 /* ApplicationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69BD182B912CCD00A72A74 /* ApplicationsScreen.swift */; };
+		CB69BD1B2B912CDD00A72A74 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69BD1A2B912CDD00A72A74 /* SettingsScreen.swift */; };
 		CB6BBB572B8AB19600CD6CD3 /* GettingStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */; };
 		CB6BBB592B8AB60400CD6CD3 /* LoginFancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */; };
 		CB6BBB5B2B8AB80000CD6CD3 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6BBB5A2B8AB80000CD6CD3 /* ImageExtension.swift */; };
@@ -77,6 +79,8 @@
 		CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		CB40A3502B8A3ED500553BD9 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		CB6240D62B8E9F9100B86B73 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		CB69BD182B912CCD00A72A74 /* ApplicationsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsScreen.swift; sourceTree = "<group>"; };
+		CB69BD1A2B912CDD00A72A74 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedView.swift; sourceTree = "<group>"; };
 		CB6BBB582B8AB60400CD6CD3 /* LoginFancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFancy.swift; sourceTree = "<group>"; };
 		CB6BBB5A2B8AB80000CD6CD3 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 				CBFDABBC2B8BF0A50044DCFA /* ProfileScreen.swift */,
 				CB843C292B8FD447003B659C /* BookmarksScreen.swift */,
 				CB843C272B8F6CAF003B659C /* EditProfileScreen.swift */,
+				CB69BD182B912CCD00A72A74 /* ApplicationsScreen.swift */,
+				CB69BD1A2B912CDD00A72A74 /* SettingsScreen.swift */,
 				CB843C2D2B8FDB73003B659C /* HelpScreen.swift */,
 			);
 			path = Profile;
@@ -423,6 +429,7 @@
 				CB6BBB632B8AD8C200CD6CD3 /* TabBarView.swift in Sources */,
 				CBEF2C642B8D5FAF00613755 /* RatingView.swift in Sources */,
 				CB843C2C2B8FD54C003B659C /* NavBarView.swift in Sources */,
+				CB69BD1B2B912CDD00A72A74 /* SettingsScreen.swift in Sources */,
 				CBFDABB82B8BF0870044DCFA /* SearchScreen.swift in Sources */,
 				CB843C282B8F6CAF003B659C /* EditProfileScreen.swift in Sources */,
 				CB843C2E2B8FDB73003B659C /* HelpScreen.swift in Sources */,
@@ -444,6 +451,7 @@
 				CB843C2A2B8FD447003B659C /* BookmarksScreen.swift in Sources */,
 				CB40A3242B8A1EF100553BD9 /* akadimos.xcdatamodeld in Sources */,
 				CBEF2C612B8D3F1C00613755 /* ViewExtension.swift in Sources */,
+				CB69BD192B912CCD00A72A74 /* ApplicationsScreen.swift in Sources */,
 				CB6BBB652B8ADE2300CD6CD3 /* MainTabView.swift in Sources */,
 				CB6BBB5B2B8AB80000CD6CD3 /* ImageExtension.swift in Sources */,
 				CB40A3182B8A1EEF00553BD9 /* akadimosApp.swift in Sources */,

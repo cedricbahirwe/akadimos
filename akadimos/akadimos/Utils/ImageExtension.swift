@@ -35,4 +35,8 @@ extension Image {
     static let profileQuestion = Image("profile.question")
     static let profileSettings = Image("profile.settings")
     
+    static let bellFill = Image("bell.fill")
+    static let lockCircle = Image("lock.circle")
+    static let passCheck = Image("password.check")
+    static let sunFill = Image("sun.fill")
 }
