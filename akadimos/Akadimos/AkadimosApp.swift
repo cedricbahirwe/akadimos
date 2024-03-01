@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct AkadimosApp: App {
-    @StateObject private var inMemoryStorage = InMemoryStorage.shared
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(inMemoryStorage)
         }
     }
 }

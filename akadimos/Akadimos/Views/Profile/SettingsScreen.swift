@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsScreen: View {
-    @AppStorage("enableDarkMode") private var enableDarkMode = false
-    @AppStorage("enablePushNotifications") private var enablePushNotifications = false
+    @AppStorage(InStorageKeys.enableDarkMode) private var enableDarkMode = false
+    @AppStorage(InStorageKeys.enablePushNotifications) private var enablePushNotifications = false
     
     var body: some View {
         List {

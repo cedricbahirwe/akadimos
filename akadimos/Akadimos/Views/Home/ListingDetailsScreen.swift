@@ -14,7 +14,7 @@ private enum PageItem: String, CaseIterable {
 struct ListingDetailsScreen: View {
     @Environment(\.isPresented) private var isPresented
     @State private var selectedTab = PageItem.details
-//    @AppStorage("isTabVisible") private var isTabVisible = true
+    @AppStorage(InStorageKeys.isTabVisible) private var isTabVisible = true
 
     private let imageHeight: CGFloat = 220
    
@@ -83,11 +83,11 @@ struct ListingDetailsScreen: View {
         .onChange(of: isPresented, initial: true) { old, new   in
             print("Do something", old, new)
             if (old && new) {
-//                isTabVisible = false
-                InMemoryStorage.shared.setTabVisibility(false)
+                isTabVisible = false
+//                InMemoryStorage.shared.setTabVisibility(false)
             } else if old && !new {
-                InMemoryStorage.shared.setTabVisibility(true)
-//                isTabVisible = true //.toggle()// = false
+//                InMemoryStorage.shared.setTabVisibility(true)
+                isTabVisible = true// //.toggle()// = false
             }
         }
     
