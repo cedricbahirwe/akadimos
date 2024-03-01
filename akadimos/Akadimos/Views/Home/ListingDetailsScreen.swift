@@ -78,6 +78,8 @@ struct ListingDetailsScreen: View {
             .hidesBackground()
             .background(.ultraThinMaterial.blendMode(.softLight))
         }
+        .toolbar(.hidden, for: .navigationBar)
+
     }
     
     private var bookmarkButton: some View {

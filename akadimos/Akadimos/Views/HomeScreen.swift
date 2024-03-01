@@ -14,143 +14,143 @@ struct HomeScreen: View {
     ]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            
-            VStack(alignment: .leading, spacing: 0) {
-                Text("Your Location")
+        NavigationStack {
+            VStack(alignment: .leading) {
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("Your Location")
+                    
+                    HStack {
+                        Text("Kigali City, Kimironko")
+                            .font(.title2.weight(.bold))
+                        Image.arrowSwap
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
                 
                 HStack {
-                    Text("Kigali City, Kimironko")
-                        .font(.title2.weight(.bold))
-                    Image.arrowSwap
+                    SearchField("", text: .constant(""))
+                        .accessoryAction(.filterMagnify) {
+                            
+                        }
+                        .shadow(color: .offBlackShadow, radius: 15, x: 10, y: 10)
+                        .shadow(color: .offWhiteShadow, radius: 15, x: -10, y: -10)
                 }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
-            
-            HStack {
-                SearchField("", text: .constant(""))
-                    .accessoryAction(.filterMagnify) {
-                        
-                    }
-                .shadow(color: .offBlackShadow, radius: 15, x: 10, y: 10)
-                .shadow(color: .offWhiteShadow, radius: 15, x: -10, y: -10)
-            }
-            .padding(.horizontal)
-            
-            Section {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(0..<10) { i in
-                            HStack {
-                                
-                                
-                                VStack(alignment: .leading) {
-                                    HStack {
-                                        HStack {
-                                            Image.magicStar
-                                            Text("4")
-                                                .bold()
-                                                .foregroundStyle(.yellow)
-                                        }
-                                        
-                                        Spacer()
-                                        ZStack {
-                                            Image.bookmark
-                                            
-                                            Image(systemName: Bool.random() ? "plus" : "checkmark")
-                                                .imageScale(.small)
-                                                .fontWeight(.bold)
-                                                .foregroundStyle(.white)
-                                        }
-                                    }
-                                    .padding()
-                                    Spacer()
-                                    
+                .padding(.horizontal)
+                
+                Section {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            ForEach(0..<10) { i in
+                                NavigationLink {
+                                    ListingDetailsScreen()
+                                } label: {
                                     VStack(alignment: .leading) {
-                                        Text("RWF 200.000")
-
-                                        Text("Rowhouse")
-                                            .font(.title)
-                                        
-                                        Text("3 kms away")
-                                    }
-                                    .fontWeight(.semibold)
-                                    .foregroundStyle(.white)
-                                    .padding()
-                                    .lineLimit(1)
-                                    
-                                }
-                                .padding(.trailing, 8)
-                            }
-                            
-                            .frame(width: 300, height: 250)
-                            .background(Image("house-3"))
-                            .background(.black.opacity(0.5))
-                            .background(.regularMaterial)
-                            .clipShape(.rect(cornerRadius: 12))
-                            
-                        }
-                    }
-                    .padding(.leading)
-                }
-            } header: {
-                Text("Near You")
-                    .font(.title.weight(.bold))
-                    .padding(.horizontal)
-            }
-            
-            
-            Spacer().frame(height: 16)
-            
-            
-            Section {
-                ScrollView(.horizontal, showsIndicators: false) {
-                  
-                    LazyHGrid(rows: rows, spacing: 20) {
-                        ForEach(0..<10) { i in
-                            HStack {
-                                
-                                Color.black.opacity(0.2)
-                                    .frame(width: 80)
-                                    .overlay {
-                                        Image(Bool.random() ? "house-1" : "house-2")
+                                        HStack {
+                                            HStack {
+                                                Image.magicStar
+                                                Text("4")
+                                                    .bold()
+                                                    .foregroundStyle(.yellow)
+                                            }
                                             
-                                    }
-
-                                VStack(alignment: .leading) {
-                                    Text("JCS House")
-                                        .font(.title3)
+                                            Spacer()
+                                            ZStack {
+                                                Image.bookmark
+                                                
+                                                Image(systemName: Bool.random() ? "plus" : "checkmark")
+                                                    .imageScale(.small)
+                                                    .fontWeight(.bold)
+                                                    .foregroundStyle(.white)
+                                            }
+                                        }
+                                        .padding()
+                                        Spacer()
+                                        
+                                        VStack(alignment: .leading) {
+                                            Text("RWF 200.000")
+                                            
+                                            Text("Rowhouse")
+                                                .font(.title)
+                                            
+                                            Text("3 kms away")
+                                        }
                                         .fontWeight(.semibold)
-                                    Text("RWF 200,000/month")
-                                    
-                                }
-                                .padding(.trailing, 8)
-                            }
-                            
-                            .frame(width: 290, alignment: .leading)
-                            .background(.background)
-                            .clipShape(.rect(cornerRadius: 9))
-                            
+                                        .foregroundStyle(.white)
+                                        .padding()
+                                        .lineLimit(1)
+                                        
+                                    }
+                                    .padding(.trailing, 8)
+                                    .frame(width: 300, height: 250)
+                                    .background(Image("house-3"))
+                                    .background(.black.opacity(0.5))
+                                    .background(.regularMaterial)
+                                    .clipShape(.rect(cornerRadius: 12))
+                                }                            }
                         }
-                        
+                        .padding(.leading)
                     }
-                    .padding(.leading)
+                } header: {
+                    Text("Near You")
+                        .font(.title.weight(.bold))
+                        .padding(.horizontal)
                 }
-            } header: {
-                Text("New Listings")
-                    .font(.title.weight(.bold))
-                    .padding(.horizontal)
+                
+                
+                Spacer().frame(height: 16)
+                
+                
+                Section {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        
+                        LazyHGrid(rows: rows, spacing: 20) {
+                            ForEach(0..<10) { i in
+                                NavigationLink {
+                                    ListingDetailsScreen()
+                                } label: {
+                                    HStack {
+                                        
+                                        Color.black.opacity(0.2)
+                                            .frame(width: 80)
+                                            .overlay {
+                                                Image(Bool.random() ? "house-1" : "house-2")
+                                                
+                                            }
+                                        
+                                        VStack(alignment: .leading) {
+                                            Text("JCS House")
+                                                .font(.title3)
+                                                .fontWeight(.semibold)
+                                            Text("RWF 200,000/month")
+                                            
+                                        }
+                                        .padding(.trailing, 8)
+                                    }
+                                    .frame(width: 290, alignment: .leading)
+                                    .background(.background)
+                                    .clipShape(.rect(cornerRadius: 9))
+                                }
+                            }
+                        }
+                        .padding(.leading)
+                    }
+                } header: {
+                    Text("New Listings")
+                        .font(.title.weight(.bold))
+                        .padding(.horizontal)
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
+            .background(.primaryBackground)
+            .toolbar(.hidden, for: .navigationBar)
         }
-        .background(.primaryBackground)
-        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
 #Preview {
     HomeScreen()
-//        .preferredColorScheme(.dark)
+    //        .preferredColorScheme(.dark)
 }
