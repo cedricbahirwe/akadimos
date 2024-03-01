@@ -12,8 +12,10 @@ private enum PageItem: String, CaseIterable {
 }
 
 struct ListingDetailsScreen: View {
+    @Environment(\.isPresented) private var isPresented
     @State private var selectedTab = PageItem.details
-    
+//    @AppStorage("isTabVisible") private var isTabVisible = true
+
     private let imageHeight: CGFloat = 220
    
     var body: some View {
@@ -70,7 +72,6 @@ struct ListingDetailsScreen: View {
                 .padding()
                 .background(.ultraThinMaterial)
         }
-        
         .safeAreaInset(edge: .top) {
             NavBarView("", trailingItem: {
                 bookmarkButton
@@ -79,7 +80,17 @@ struct ListingDetailsScreen: View {
             .background(.ultraThinMaterial.blendMode(.softLight))
         }
         .toolbar(.hidden, for: .navigationBar)
-
+        .onChange(of: isPresented, initial: true) { old, new   in
+            print("Do something", old, new)
+            if (old && new) {
+//                isTabVisible = false
+                InMemoryStorage.shared.setTabVisibility(false)
+            } else if old && !new {
+                InMemoryStorage.shared.setTabVisibility(true)
+//                isTabVisible = true //.toggle()// = false
+            }
+        }
+    
     }
     
     private var bookmarkButton: some View {

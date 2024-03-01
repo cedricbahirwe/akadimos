@@ -106,7 +106,7 @@ struct HomeScreen: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         
                         LazyHGrid(rows: rows, spacing: 20) {
-                            ForEach(0..<10) { i in
+                            ForEach(1..<10) { i in
                                 NavigationLink {
                                     ListingDetailsScreen()
                                 } label: {
@@ -115,8 +115,8 @@ struct HomeScreen: View {
                                         Color.black.opacity(0.2)
                                             .frame(width: 80)
                                             .overlay {
-                                                Image(Bool.random() ? "house-1" : "house-2")
-                                                
+                                                Image("house-\(min(i, 3))")
+                                                    .resizable()
                                             }
                                         
                                         VStack(alignment: .leading) {
@@ -131,6 +131,7 @@ struct HomeScreen: View {
                                     .frame(width: 290, alignment: .leading)
                                     .background(.background)
                                     .clipShape(.rect(cornerRadius: 9))
+                                    .foregroundStyle(.foreground)
                                 }
                             }
                         }
@@ -152,5 +153,4 @@ struct HomeScreen: View {
 
 #Preview {
     HomeScreen()
-    //        .preferredColorScheme(.dark)
 }
