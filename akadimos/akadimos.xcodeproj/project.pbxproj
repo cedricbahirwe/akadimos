@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB40A3182B8A1EEF00553BD9 /* akadimosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3172B8A1EEF00553BD9 /* akadimosApp.swift */; };
+		CB40A3182B8A1EEF00553BD9 /* AkadimosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3172B8A1EEF00553BD9 /* AkadimosApp.swift */; };
 		CB40A31A2B8A1EEF00553BD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3192B8A1EEF00553BD9 /* ContentView.swift */; };
 		CB40A31C2B8A1EF100553BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB40A31B2B8A1EF100553BD9 /* Assets.xcassets */; };
 		CB40A31F2B8A1EF100553BD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB40A31E2B8A1EF100553BD9 /* Preview Assets.xcassets */; };
@@ -33,6 +33,7 @@
 		CB843C2A2B8FD447003B659C /* BookmarksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB843C292B8FD447003B659C /* BookmarksScreen.swift */; };
 		CB843C2C2B8FD54C003B659C /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB843C2B2B8FD54C003B659C /* NavBarView.swift */; };
 		CB843C2E2B8FDB73003B659C /* HelpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB843C2D2B8FDB73003B659C /* HelpScreen.swift */; };
+		CBCEF2982B91D5A40052ADBD /* ListingDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEF2972B91D5A40052ADBD /* ListingDetailsScreen.swift */; };
 		CBEF2C5F2B8D0F0000613755 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF2C5E2B8D0F0000613755 /* SearchField.swift */; };
 		CBEF2C612B8D3F1C00613755 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF2C602B8D3F1C00613755 /* ViewExtension.swift */; };
 		CBEF2C642B8D5FAF00613755 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF2C632B8D5FAF00613755 /* RatingView.swift */; };
@@ -64,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		CB40A3142B8A1EEF00553BD9 /* akadimos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = akadimos.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB40A3172B8A1EEF00553BD9 /* akadimosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = akadimosApp.swift; sourceTree = "<group>"; };
+		CB40A3172B8A1EEF00553BD9 /* AkadimosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkadimosApp.swift; sourceTree = "<group>"; };
 		CB40A3192B8A1EEF00553BD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB40A31B2B8A1EF100553BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB40A31E2B8A1EF100553BD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		CB843C292B8FD447003B659C /* BookmarksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksScreen.swift; sourceTree = "<group>"; };
 		CB843C2B2B8FD54C003B659C /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		CB843C2D2B8FDB73003B659C /* HelpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpScreen.swift; sourceTree = "<group>"; };
+		CBCEF2972B91D5A40052ADBD /* ListingDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailsScreen.swift; sourceTree = "<group>"; };
 		CBEF2C5E2B8D0F0000613755 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		CBEF2C602B8D3F1C00613755 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		CBEF2C632B8D5FAF00613755 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		CB40A30B2B8A1EEF00553BD9 = {
 			isa = PBXGroup;
 			children = (
-				CB40A3162B8A1EEF00553BD9 /* akadimos */,
+				CB40A3162B8A1EEF00553BD9 /* Akadimos */,
 				CB40A32C2B8A1EF100553BD9 /* akadimosTests */,
 				CB40A3362B8A1EF100553BD9 /* akadimosUITests */,
 				CB40A3152B8A1EEF00553BD9 /* Products */,
@@ -149,10 +151,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CB40A3162B8A1EEF00553BD9 /* akadimos */ = {
+		CB40A3162B8A1EEF00553BD9 /* Akadimos */ = {
 			isa = PBXGroup;
 			children = (
-				CB40A3172B8A1EEF00553BD9 /* akadimosApp.swift */,
+				CB40A3172B8A1EEF00553BD9 /* AkadimosApp.swift */,
 				CBFDABBE2B8BF56F0044DCFA /* DataSources */,
 				CB40A3492B8A21D600553BD9 /* ViewModels */,
 				CB40A3482B8A21CB00553BD9 /* Utils */,
@@ -163,7 +165,7 @@
 				CB40A3222B8A1EF100553BD9 /* akadimos.xcdatamodeld */,
 				CB40A31D2B8A1EF100553BD9 /* Preview Content */,
 			);
-			path = akadimos;
+			path = Akadimos;
 			sourceTree = "<group>";
 		};
 		CB40A31D2B8A1EF100553BD9 /* Preview Content */ = {
@@ -198,6 +200,7 @@
 				CB62409D2B8E83F800B86B73 /* Activity */,
 				CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationScreen.swift */,
 				CB40A3192B8A1EEF00553BD9 /* ContentView.swift */,
+				CBCEF2962B91D5990052ADBD /* Home */,
 				CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */,
 				CB6BBB602B8AC9DF00CD6CD3 /* HomeFancy.swift */,
 				CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */,
@@ -257,6 +260,14 @@
 				CB843C2D2B8FDB73003B659C /* HelpScreen.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		CBCEF2962B91D5990052ADBD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CBCEF2972B91D5A40052ADBD /* ListingDetailsScreen.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		CBEF2C5D2B8D0E8600613755 /* Shared */ = {
@@ -445,6 +456,7 @@
 				CBFDABC32B8BF78F0044DCFA /* LocationAnnotationView.swift in Sources */,
 				CBFDABB62B8BF0500044DCFA /* MapScreen.swift in Sources */,
 				CBFDABBA2B8BF0950044DCFA /* ActivityScreen.swift in Sources */,
+				CBCEF2982B91D5A40052ADBD /* ListingDetailsScreen.swift in Sources */,
 				CB40A31A2B8A1EEF00553BD9 /* ContentView.swift in Sources */,
 				CBFDABBD2B8BF0A50044DCFA /* ProfileScreen.swift in Sources */,
 				CBFDABC02B8BF5810044DCFA /* LocationsDataService.swift in Sources */,
@@ -454,7 +466,7 @@
 				CB69BD192B912CCD00A72A74 /* ApplicationsScreen.swift in Sources */,
 				CB6BBB652B8ADE2300CD6CD3 /* MainTabView.swift in Sources */,
 				CB6BBB5B2B8AB80000CD6CD3 /* ImageExtension.swift in Sources */,
-				CB40A3182B8A1EEF00553BD9 /* akadimosApp.swift in Sources */,
+				CB40A3182B8A1EEF00553BD9 /* AkadimosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

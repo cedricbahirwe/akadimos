@@ -15,6 +15,7 @@ extension Image {
     static let magicStar = Image("magic-star")
     static let arrowSwap = Image("arrow-swap-horizontal")
     static let bookmark = Image("bookmark")
+    static let bookmarkFill = Image("bookmark.fill")
     static let filterMagnify = Image("filter-magnify")
     static let filterLined = Image("filter-lined")
     static let filterGlass = Image("filter-glass")
@@ -39,4 +40,6 @@ extension Image {
     static let lockCircle = Image("lock.circle")
     static let passCheck = Image("password.check")
     static let sunFill = Image("sun.fill")
+    
+    static let messageBubble = Image("message.bubble")
 }

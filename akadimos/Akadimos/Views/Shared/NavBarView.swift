@@ -11,7 +11,7 @@ struct NavBarView<TrailingContent>: View where TrailingContent: View {
     private let title: LocalizedStringKey
     private let onGoBack: (() -> Void)?
     private let trailingItem: () -> TrailingContent
-    
+    private var hidesBackground = false
     @Environment(\.dismiss) private var dismiss
     
     init(_ title: LocalizedStringKey,
@@ -36,7 +36,7 @@ struct NavBarView<TrailingContent>: View where TrailingContent: View {
                     .fontWeight(.bold)
                     .labelStyle(.iconOnly)
                     .frame(width: 35, height: 35)
-                    .background(.blue, in: .rect(cornerRadius: 8))
+                    .background(.blue.opacity(0.8), in: .rect(cornerRadius: 8))
                     .foregroundStyle(.white)
             }
             
@@ -49,10 +49,17 @@ struct NavBarView<TrailingContent>: View where TrailingContent: View {
             trailingItem()
         }
         .padding([.horizontal, .bottom])
-        .background(.ultraThinMaterial)
+        .background(.ultraThinMaterial.opacity(hidesBackground ? 0 : 1))
     }
 }
 
+extension NavBarView {
+    func hidesBackground(_ hidden: Bool = true) -> some View {
+        var view = self
+        view.hidesBackground = hidden
+        return view
+    }
+}
 
 #Preview(traits: .sizeThatFitsLayout) {
     NavBarView("Title Goes here",  onGoBack: {})
