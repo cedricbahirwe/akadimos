@@ -10,6 +10,8 @@ import SwiftUI
 // TODO: - Support Sliding Interaction
 struct RatingView: View {
     @Binding private var rating: Int
+    private var tintColor: Color = .blue
+    private var otherColor: Color = .primary
     
     init(value: Binding<Int>) {
         let initialValue = min(max(0, value.wrappedValue), 5)
@@ -26,7 +28,7 @@ struct RatingView: View {
             ForEach(0..<5) { i in
                 Image.magicStar
                     .renderingMode(.template)
-                    .foregroundStyle(i < rating ? .blue : .primary)
+                    .foregroundStyle(i < rating ? tintColor : otherColor)
                     .overlay {
                         if i >= rating {
                             Image.magicStar
@@ -40,6 +42,14 @@ struct RatingView: View {
                     }
             }
         }
+    }
+}
+
+extension RatingView {
+    func withTint(_ color: Color) -> some View {
+        var view = self
+        view.tintColor = color
+        return view
     }
 }
 
