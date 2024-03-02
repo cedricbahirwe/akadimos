@@ -18,7 +18,7 @@ extension Image {
     static let filterMagnify = Image("filter-magnify")
     static let filterLined = Image("filter-lined")
     static let filterGlass = Image("filter-glass")
-
+    
     static let discoverCircle = Image("discover.circle")
     static let locationCircle = Image("location.circle")
     static let moneySquare = Image("money.square")
@@ -39,4 +39,6 @@ extension Image {
     static let lockCircle = Image("lock.circle")
     static let passCheck = Image("password.check")
     static let sunFill = Image("sun.fill")
+    static let welcomeSplash = Image("welcome.splash")
+    static let welcomePolygone = Image("welcome.polygone")
 }
