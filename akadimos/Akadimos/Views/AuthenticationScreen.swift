@@ -41,7 +41,6 @@ struct AuthenticationScreen: View {
             Text(isLogin ? "Login" : "Create Account")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundStyle(.foregroundLoginBlue)
                 .padding(.bottom, 40)
             
             

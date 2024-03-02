@@ -14,11 +14,11 @@ struct WelcomeView: View {
           
             ZStack(alignment: .bottom) {
                 
-                Image("welcome-1")
+                Image.welcomeSplash
                     .resizable()
                     .scaledToFit()
                     .overlay(alignment: .topLeading) {
-                        Text("Dicover your\nideal House.")
+                        Text("Dicover your\nideal Place.")
                             .font(.largeTitle.weight(.black))
                             .fontDesign(.rounded)
                             .foregroundStyle(.white.shadow(.inner(color: .gray, radius: 2, x: 5)))
@@ -34,7 +34,7 @@ struct WelcomeView: View {
             
             Button {
             } label: {
-                Text("Get In")
+                Text("Get Started")
                     .font(.title2.weight(.bold))
                     .fontDesign(.rounded)
                     .padding(.vertical)
@@ -43,7 +43,7 @@ struct WelcomeView: View {
             }
             .padding(25)
             .frame(maxWidth: .infinity)
-            .background(Image("welcome-svg").resizable().scaledToFill())
+            .background(Image.welcomePolygone.resizable().scaledToFill())
 
         }
         .background(.primaryDarkBlue)
