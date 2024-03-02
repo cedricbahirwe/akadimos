@@ -127,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB0FB4ED2B93444E000B9888 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */,
+				CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		CB40A30B2B8A1EEF00553BD9 = {
 			isa = PBXGroup;
 			children = (
@@ -192,19 +201,18 @@
 		CB40A3462B8A21C300553BD9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CB843C242B8F5CBB003B659C /* Profile */,
-				CB62409D2B8E83F800B86B73 /* Activity */,
 				CB6BBB5C2B8ABDA000CD6CD3 /* AuthenticationScreen.swift */,
 				CB40A3192B8A1EEF00553BD9 /* ContentView.swift */,
-				CBCEF2962B91D5990052ADBD /* Home */,
 				CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */,
 				CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */,
-				CB6BBB642B8ADE2300CD6CD3 /* MainTabView.swift */,
+				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
+				CB62409D2B8E83F800B86B73 /* Activity */,
+				CBCEF2962B91D5990052ADBD /* Home */,
 				CBFDABC12B8BF7780044DCFA /* Map */,
+				CB843C242B8F5CBB003B659C /* Profile */,
 				CBEF2C622B8D5F9A00613755 /* Search */,
 				CBEF2C5D2B8D0E8600613755 /* Shared */,
-				CB6BBB622B8AD8C200CD6CD3 /* TabBarView.swift */,
-				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
+				CB0FB4ED2B93444E000B9888 /* TabBar */,
 			);
 			path = Views;
 			sourceTree = "<group>";
