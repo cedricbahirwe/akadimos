@@ -119,21 +119,11 @@ private extension SearchScreen {
         let i: Int
         var body: some View {
             VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 10) {
-                    Image("avatar-\(Int.random(in: 1...3))")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 60, height: 60)
-                        .background(.ultraThinMaterial, in: .circle)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Placeholder")
-                            .fontWeight(.medium)
-                        Text("Owner")
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                AvatarTitlePreview(
+                    image: "avatar-\(Int.random(in: 1...3))",
+                    title: "Placeholder",
+                    subtitle: "Owner"
+                )
                 
                 .padding(10)
                 
@@ -273,6 +263,36 @@ private extension SearchScreen {
         }
     }
     
+}
+
+struct AvatarTitlePreview: View {
+    let image: String
+    let size: CGFloat
+    let title: String
+    let subtitle: String
+    init(image: String, size: CGFloat = 60, title: String, subtitle: String) {
+        self.image = image
+        self.size = size
+        self.title = title
+        self.subtitle = subtitle
+    }
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: size, height: size)
+                .background(.ultraThinMaterial, in: .circle)
+            
+            VStack(alignment: .leading) {
+                Text(title)
+                    .fontWeight(.medium)
+                Text(subtitle)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
 }
 
 

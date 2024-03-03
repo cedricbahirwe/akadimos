@@ -28,7 +28,7 @@ struct AuthenticationScreen: View {
     @State private var authFlow: AuthFlow = .login
     @State private var login = LoginModel()
     @State private var signup = SignupModel()
-    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+    @AppStorage(InStorageKeys.isLoggedIn) private var isLoggedIn: Bool = false
 
     private var isLogin: Bool { authFlow == .login }
     var body: some View {

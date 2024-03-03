@@ -17,8 +17,8 @@ private enum FlowRoute  {
 
 struct ProfileScreen: View {
     @State private var path: [FlowRoute] = []
-    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
-    @AppStorage("tabSelection") private var tabSelection = TabItem.profile
+    @AppStorage(InStorageKeys.isLoggedIn) private var isLoggedIn: Bool = false
+    @AppStorage(InStorageKeys.appTab) private var tabSelection = TabItem.profile
 
     var body: some View {
         NavigationStack(path: $path) {

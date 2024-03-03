@@ -8,11 +8,11 @@
 import SwiftUI
 
 extension View {
-    func inspectSize(result: @escaping (CGSize) -> Void) -> some View {
+    func inspectSize() -> some View {
         overlay {
             GeometryReader { geo in
-                result(geo.frame(in: .global).size)
-                return EmptyView()
+                let size = geo.frame(in: .global).size
+                return Text("W\(size.width), H:\(size.height)")
             }
         }
     }

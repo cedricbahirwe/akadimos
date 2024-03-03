@@ -9,13 +9,18 @@ import SwiftUI
 
 struct MainTabView<Content> : View where Content : View {
     @Binding var selection: TabItem
-    
+    @AppStorage(InStorageKeys.isTabVisible) private var isTabVisible = true
     var contentView: () -> Content
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack(alignment: .bottom) {
+            
             contentView()
                 .frame(maxHeight: .infinity)
+                .padding(.bottom, isTabVisible ? 70 : 0 )
+            
             TabBarView(selection: $selection)
+                .background(.primaryBackground)
+                .opacity(isTabVisible ? 1 : 0)
         }
         .ignoresSafeArea(.keyboard)
     }
