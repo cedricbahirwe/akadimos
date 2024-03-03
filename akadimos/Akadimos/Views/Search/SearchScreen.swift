@@ -269,8 +269,8 @@ struct AvatarTitlePreview: View {
     let image: String
     let size: CGFloat
     let title: String
-    let subtitle: String
-    init(image: String, size: CGFloat = 60, title: String, subtitle: String) {
+    let subtitle: String?
+    init(image: String, size: CGFloat = 60, title: String, subtitle: String?) {
         self.image = image
         self.size = size
         self.title = title
@@ -286,9 +286,11 @@ struct AvatarTitlePreview: View {
             
             VStack(alignment: .leading) {
                 Text(title)
-                    .fontWeight(.medium)
-                Text(subtitle)
-                    .foregroundStyle(.secondary)
+                    .fontWeight(.semibold)
+                if let subtitle {
+                    Text(subtitle)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

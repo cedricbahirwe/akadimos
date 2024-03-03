@@ -80,7 +80,6 @@ struct AuthenticationScreen: View {
                         Button("Forgot Password ?") {}
                             .foregroundStyle(.primary)
                             .opacity(0.6)
-//                            .transition(RotatingFadeTransition())
                     }
                     
                     Spacer()
