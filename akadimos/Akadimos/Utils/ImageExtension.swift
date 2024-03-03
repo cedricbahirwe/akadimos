@@ -44,4 +44,6 @@ extension Image {
     static let messageBubble = Image("message.bubble")
     static let welcomeSplash = Image("welcome.splash")
     static let welcomePolygone = Image("welcome.polygone")
+    
+    static let rentBackground = Image("rent.background")
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private struct ProfileInfo {
+struct ProfileInfo {
     var firstName = "Drios"
     var lastName = "Man"
     var mobileNumber = "1234567890"
@@ -43,15 +43,15 @@ struct EditProfileScreen: View {
                     .fontWeight(.bold)
                 
                 HStack(spacing: 20){
-                    FieldView("First Name", text: $profile.firstName)
-                    FieldView("Last Name", text: $profile.lastName)
+                    VFieldView("First Name", text: $profile.firstName)
+                    VFieldView("Last Name", text: $profile.lastName)
                 }
                 
-                FieldView("Mobile Number", text: $profile.mobileNumber)
+                VFieldView("Mobile Number", text: $profile.mobileNumber)
                 
-                FieldView("Email Address", text: $profile.email)
+                VFieldView("Email Address", text: $profile.email)
                 
-                FieldView("Address", text: $profile.address)
+                VFieldView("Address", text: $profile.address)
             }
             .padding(.horizontal)
 
@@ -99,26 +99,25 @@ struct EditProfileScreen: View {
         }
         .toolbar(.hidden, for: .navigationBar)
     }
-    
-    
-    struct FieldView: View {
-        let title: LocalizedStringKey
-        let placeholder: LocalizedStringKey
-        @Binding private var text: String
-        init(_ title: LocalizedStringKey, placeholder: LocalizedStringKey = "", text: Binding<String>) {
-            self.title = title
-            self.placeholder = placeholder
-            self._text = text
-        }
-        var body: some View {
-            VStack(alignment: .leading) {
-                Text(title)
-                    .font(.title3)
-                    .fontWeight(.medium)
-                TextField(placeholder, text: $text)
-                    .padding()
-                    .background(.regularMaterial, in: .rect(cornerRadius: 8))
-            }
+}
+
+struct VFieldView: View {
+    let title: LocalizedStringKey
+    let placeholder: LocalizedStringKey
+    @Binding private var text: String
+    init(_ title: LocalizedStringKey, placeholder: LocalizedStringKey = "", text: Binding<String>) {
+        self.title = title
+        self.placeholder = placeholder
+        self._text = text
+    }
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.title3)
+                .fontWeight(.medium)
+            TextField(placeholder, text: $text)
+                .padding()
+                .background(.regularMaterial, in: .rect(cornerRadius: 8))
         }
     }
 }

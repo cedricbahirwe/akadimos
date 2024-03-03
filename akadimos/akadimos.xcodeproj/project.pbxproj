@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0FB4EF2B940488000B9888 /* RentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FB4EE2B940488000B9888 /* RentView.swift */; };
 		CB40A3182B8A1EEF00553BD9 /* AkadimosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3172B8A1EEF00553BD9 /* AkadimosApp.swift */; };
 		CB40A31A2B8A1EEF00553BD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB40A3192B8A1EEF00553BD9 /* ContentView.swift */; };
 		CB40A31C2B8A1EF100553BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB40A31B2B8A1EF100553BD9 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB0FB4EE2B940488000B9888 /* RentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentView.swift; sourceTree = "<group>"; };
 		CB40A3142B8A1EEF00553BD9 /* akadimos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = akadimos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB40A3172B8A1EEF00553BD9 /* AkadimosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkadimosApp.swift; sourceTree = "<group>"; };
 		CB40A3192B8A1EEF00553BD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				CB6BBB562B8AB19600CD6CD3 /* GettingStartedView.swift */,
 				CB40A34E2B8A3D1B00553BD9 /* HomeScreen.swift */,
 				CB40A34A2B8A22A100553BD9 /* WelcomeView.swift */,
+				CB0FB4EE2B940488000B9888 /* RentView.swift */,
 				CB62409D2B8E83F800B86B73 /* Activity */,
 				CBCEF2962B91D5990052ADBD /* Home */,
 				CBFDABC12B8BF7780044DCFA /* Map */,
@@ -444,6 +447,7 @@
 				CB69BD1B2B912CDD00A72A74 /* SettingsScreen.swift in Sources */,
 				CBFDABB82B8BF0870044DCFA /* SearchScreen.swift in Sources */,
 				CB843C282B8F6CAF003B659C /* EditProfileScreen.swift in Sources */,
+				CB0FB4EF2B940488000B9888 /* RentView.swift in Sources */,
 				CB843C2E2B8FDB73003B659C /* HelpScreen.swift in Sources */,
 				CBEF2C5F2B8D0F0000613755 /* SearchField.swift in Sources */,
 				CBFDABC52B8C05320044DCFA /* LocationViewModel.swift in Sources */,
