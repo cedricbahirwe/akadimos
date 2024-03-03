@@ -12,10 +12,7 @@ private enum PageItem: String, CaseIterable {
 }
 
 struct ListingDetailsScreen: View {
-    @Environment(\.isPresented) private var isPresented
     @State private var selectedTab = PageItem.details
-    @AppStorage(InStorageKeys.isTabVisible) private var isTabVisible = true
-
     private let imageHeight: CGFloat = 220
    
     var body: some View {
@@ -80,17 +77,6 @@ struct ListingDetailsScreen: View {
             .background(.ultraThinMaterial.blendMode(.softLight))
         }
         .toolbar(.hidden, for: .navigationBar)
-        .onChange(of: isPresented, initial: true) { old, new   in
-            print("Do something", old, new)
-            if (old && new) {
-                isTabVisible = false
-//                InMemoryStorage.shared.setTabVisibility(false)
-            } else if old && !new {
-//                InMemoryStorage.shared.setTabVisibility(true)
-                isTabVisible = true// //.toggle()// = false
-            }
-        }
-    
     }
     
     private var bookmarkButton: some View {
@@ -148,7 +134,7 @@ struct ListingDetailsScreen: View {
                         .fontWeight(.bold)
                         .padding(.vertical, 13)
                         .padding(.horizontal)
-                        .background(.blue.opacity(0.55), in: .rect(cornerRadius: 12))
+                        .background(Color.accentColor.opacity(0.55), in: .rect(cornerRadius: 12))
                 }
                 
             }
@@ -171,16 +157,16 @@ struct ListingDetailsScreen: View {
             .buttonStyle(.bordered)
             .tint(.primary)
             
-            Button {
-                
+            NavigationLink {
+                RentView()
             } label: {
                 Text("Rent")
                     .font(.title3)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 40)
+                    .frame(height: 54)
+                    .background(Color.accentColor, in: .rect(cornerRadius: 12))
+                    .foregroundColor(.white)
             }
-            .buttonStyle(.borderedProminent)
-            
         }
     }
 }
@@ -213,7 +199,7 @@ private extension ListingDetailsScreen {
                         .overlay(alignment: .bottom) {
                             if selection == item {
                                 Capsule()
-                                    .fill(Color.blue)
+                                    .fill(Color.accentColor)
                                     .frame(width: 50, height: 5)
                                     .matchedGeometryEffect(id: "active", in: animation)
                                 
@@ -318,5 +304,7 @@ private extension ListingDetailsScreen {
 }
 
 #Preview {
-    ListingDetailsScreen()
+    NavigationStack {
+        ListingDetailsScreen()
+    }
 }

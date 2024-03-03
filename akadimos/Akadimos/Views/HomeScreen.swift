@@ -12,6 +12,8 @@ struct HomeScreen: View {
         GridItem(.fixed(70), spacing: 20),
         GridItem(.fixed(70), spacing: 20)
     ]
+    @Environment(\.isPresented) private var isPresented
+    @AppStorage(InStorageKeys.isTabVisible) private var isTabVisible = true
     
     var body: some View {
         NavigationStack {
@@ -147,6 +149,12 @@ struct HomeScreen: View {
             }
             .background(.primaryBackground)
             .toolbar(.hidden, for: .navigationBar)
+            .onAppear() {
+                isTabVisible = true
+            }
+            .onDisappear() {
+                isTabVisible = false
+            }
         }
     }
 }
