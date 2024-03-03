@@ -47,6 +47,9 @@ struct HomeScreen: View {
                             ForEach(0..<10) { i in
                                 NavigationLink {
                                     ListingDetailsScreen()
+                                        .onAppear() {
+                                            isTabVisible = false
+                                        }
                                 } label: {
                                     VStack(alignment: .leading) {
                                         HStack {
@@ -111,6 +114,9 @@ struct HomeScreen: View {
                             ForEach(1..<10) { i in
                                 NavigationLink {
                                     ListingDetailsScreen()
+                                        .onAppear() {
+                                            isTabVisible = false
+                                        }
                                 } label: {
                                     HStack {
                                         
@@ -151,9 +157,6 @@ struct HomeScreen: View {
             .toolbar(.hidden, for: .navigationBar)
             .onAppear() {
                 isTabVisible = true
-            }
-            .onDisappear() {
-                isTabVisible = false
             }
         }
     }

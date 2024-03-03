@@ -178,12 +178,12 @@ struct RentView: View {
             .padding(20)
             .foregroundStyle(.green)
             .frame(maxWidth: .infinity, minHeight: 150, alignment: .leading)
-            .background(Color.green.opacity(0.2))
+            .background(Color.green.opacity(0.15))
             .background(.regularMaterial)
             .clipShape(.rect(cornerRadius: 20))
             .padding()
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation {
                         hasSubmitted = false
                     }

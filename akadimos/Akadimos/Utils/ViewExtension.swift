@@ -19,28 +19,28 @@ extension View {
 }
 
 
-struct PresentationChangeModifier<T>: ViewModifier {
-    @AppStorage(InStorageKeys.isTabVisible) private var isTabVisible = true
-    @Environment(\.isPresented) private var isPresented
-
-    let item: T
-    func body(content: Content) -> some View {
-        content
-        .onChange(of: isPresented, initial: true) { old, new   in
-            print("Old:", old, "New:", new)
-            if (old && new) {
-                isTabVisible = false
-            } else if old && !new {
-                isTabVisible = true
-            }
-        }
-    }
-    
-}
-
-
-extension View {
-    func hidesTabOnPresentation() -> some View {
-        modifier(PresentationChangeModifier(item: self))
-    }
-}
+//struct PresentationChangeModifier<T>: ViewModifier {
+//    @AppStorage(InStorageKeys.isTabVisible) private var isTabVisible = true
+//    @Environment(\.isPresented) private var isPresented
+//
+//    let item: T
+//    func body(content: Content) -> some View {
+//        content
+//        .onChange(of: isPresented, initial: true) { old, new   in
+//            print("Old:", old, "New:", new)
+//            if (old && new) {
+//                isTabVisible = false
+//            } else if old && !new {
+//                isTabVisible = true
+//            }
+//        }
+//    }
+//    
+//}
+//
+//
+//extension View {
+//    func hidesTabOnPresentation() -> some View {
+//        modifier(PresentationChangeModifier(item: self))
+//    }
+//}
