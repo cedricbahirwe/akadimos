@@ -12,6 +12,8 @@ struct HomeScreen: View {
         GridItem(.fixed(70), spacing: 20),
         GridItem(.fixed(70), spacing: 20)
     ]
+    @Environment(\.isPresented) private var isPresented
+    @AppStorage(InStorageKeys.isTabVisible) private var isTabVisible = true
     
     var body: some View {
         NavigationStack {
@@ -45,6 +47,9 @@ struct HomeScreen: View {
                             ForEach(0..<10) { i in
                                 NavigationLink {
                                     ListingDetailsScreen()
+                                        .onAppear() {
+                                            isTabVisible = false
+                                        }
                                 } label: {
                                     VStack(alignment: .leading) {
                                         HStack {
@@ -109,6 +114,9 @@ struct HomeScreen: View {
                             ForEach(1..<10) { i in
                                 NavigationLink {
                                     ListingDetailsScreen()
+                                        .onAppear() {
+                                            isTabVisible = false
+                                        }
                                 } label: {
                                     HStack {
                                         
@@ -147,6 +155,9 @@ struct HomeScreen: View {
             }
             .background(.primaryBackground)
             .toolbar(.hidden, for: .navigationBar)
+            .onAppear() {
+                isTabVisible = true
+            }
         }
     }
 }
