@@ -14,6 +14,10 @@ struct MapScreen: View {
     @State private var showFilter = false
     var locationRadius: CGFloat { radius * 100 }
     
+    @State private var showResults = false
+    @State private var showScanner = false
+    @State private var searchText = ""
+    
     var body: some View {
         ZStack {
             Map(position: $locationVM.cameraPosition, interactionModes: .all)  {
@@ -45,17 +49,27 @@ struct MapScreen: View {
             
             
             mapOverlayView
+            
+            if showScanner {
+                ScanLoadingView(isPresented: $showScanner, onFinish: {
+                    showResults = true
+                })
+            }
         }
     }
     
     private var mapOverlayView: some View {
-        VStack {
+        VStack(spacing: 0) {
             VStack(spacing: 20) {
                 
-                SearchField("", text: .constant(""))
-                    .accessoryAction(.filterLined) {
+                SearchField("", text: $searchText)
+                    .accessoryAction(showResults ? .filterMagnify : .filterLined) {
                         withAnimation {
-                            showFilter.toggle()
+                            if showResults {
+                                showResults = false
+                            } else {
+                                showFilter.toggle()
+                            }
                         }
                     }
                 
@@ -120,24 +134,108 @@ struct MapScreen: View {
                 
             }
             .padding(.horizontal)
+            .background(showResults ? .primaryBackground : .clear)
             
-            Spacer()
-            
-            Button {
-            } label: {
-                Text("Scan Area")
-                    .font(.title3)
-                    .foregroundStyle(.white)
-                    .frame(width: 150, height: 40)
+            if showResults {
+                ScanResultsView()
+            } else {
+                Spacer()
+                
+                ScanAreaButton(action: {
+                    showScanner = true
+                })
             }
-            .buttonBorderShape(.roundedRectangle(radius: 15))
-            .buttonStyle(.borderedProminent)
-            .padding(.vertical, 20)
         }
     }
 }
 
+private struct ScanResultsView: View {
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Here's what we've found.")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                ForEach(0 ..< 2) { item in
+                    ScanResultRowView()
+                }
+            }
+            .padding(.horizontal)
+        }
+        .scrollIndicators(.hidden)
+        .background(.primaryBackground)
+    }
+}
+
+private struct ScanResultRowView: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                AvatarTitlePreview(image: "avatar-1",
+                                   size: 50,
+                                   title: "John Doe",
+                                   subtitle: nil)
+                
+                Spacer()
+                
+                Text("500m")
+            }
+            .foregroundStyle(.white)
+            
+            Spacer()
+            
+            VStack(alignment: .leading, spacing: 5) {
+                Text("Kimironko apartment")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Text("RWF 200,000/Month")
+                    .font(.title3)
+                    .fontWeight(.medium)
+                
+                
+                RatingLabel(value: 2)
+                    .tint(.white)
+            }
+            .foregroundColor(.white)
+            
+        }
+        .padding()
+        .frame(maxWidth: .infinity)
+        .frame(height: 230)
+        .background(
+            LinearGradient(colors: [Color.black.opacity(0.3), Color.black.opacity(0.6)], startPoint: .top, endPoint: .bottom)
+        )
+        .background(
+            Image("house-1")
+                .resizable()
+        )
+        .clipShape(.rect(cornerRadius: 20))
+    }
+}
 
 #Preview {
     MapScreen()
+}
+
+#Preview {
+    ScanResultsView()
+    
+}
+
+struct ScanAreaButton: View {
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Text("Scan Area")
+                .font(.title3)
+                .foregroundStyle(.white)
+                .frame(width: 150, height: 40)
+        }
+        .buttonBorderShape(.roundedRectangle(radius: 15))
+        .buttonStyle(.borderedProminent)
+        .padding(.vertical, 20)
+    }
 }

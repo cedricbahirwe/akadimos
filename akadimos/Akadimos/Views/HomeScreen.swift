@@ -53,13 +53,8 @@ struct HomeScreen: View {
                                 } label: {
                                     VStack(alignment: .leading) {
                                         HStack {
-                                            HStack {
-                                                Image.magicStar
-                                                Text("4")
-                                                    .bold()
-                                                    .foregroundStyle(.yellow)
-                                            }
-                                            
+                                            RatingLabel(value: 4)
+                                                .tint(.yellow)  
                                             Spacer()
                                             ZStack {
                                                 Image.bookmark
@@ -164,4 +159,19 @@ struct HomeScreen: View {
 
 #Preview {
     HomeScreen()
+}
+
+struct RatingLabel: View {
+    let value: Int
+    var body: some View {
+        HStack {
+            Image.magicStar
+                .renderingMode(.template)
+            Text("\(value)")
+                .bold()
+//                .foregroundStyle(.yellow)
+        }
+        .foregroundStyle(.tint)
+        
+    }
 }
