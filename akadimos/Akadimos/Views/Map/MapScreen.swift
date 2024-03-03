@@ -16,6 +16,7 @@ struct MapScreen: View {
     
     @State private var showResults = false
     @State private var showScanner = false
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
@@ -61,7 +62,7 @@ struct MapScreen: View {
         VStack(spacing: 0) {
             VStack(spacing: 20) {
                 
-                SearchField("", text: .constant(""))
+                SearchField("", text: $searchText)
                     .accessoryAction(showResults ? .filterMagnify : .filterLined) {
                         withAnimation {
                             if showResults {
@@ -140,17 +141,9 @@ struct MapScreen: View {
             } else {
                 Spacer()
                 
-                Button {
+                ScanAreaButton(action: {
                     showScanner = true
-                } label: {
-                    Text("Scan Area")
-                        .font(.title3)
-                        .foregroundStyle(.white)
-                        .frame(width: 150, height: 40)
-                }
-                .buttonBorderShape(.roundedRectangle(radius: 15))
-                .buttonStyle(.borderedProminent)
-                .padding(.vertical, 20)
+                })
             }
         }
     }
@@ -230,4 +223,19 @@ private struct ScanResultRowView: View {
 #Preview {
     ScanResultsView()
     
+}
+
+struct ScanAreaButton: View {
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Text("Scan Area")
+                .font(.title3)
+                .foregroundStyle(.white)
+                .frame(width: 150, height: 40)
+        }
+        .buttonBorderShape(.roundedRectangle(radius: 15))
+        .buttonStyle(.borderedProminent)
+        .padding(.vertical, 20)
+    }
 }
